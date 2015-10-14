@@ -8,16 +8,20 @@
 
 import UIKit
 
-class NewsTableViewCell: UITableViewCell {
+class HomeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var postImageView:UIImageView!
     @IBOutlet weak var authorImageView:UIImageView!
     @IBOutlet weak var postTitleLabel:UILabel!
     @IBOutlet weak var authorLabel:UILabel!
-
-    override func awakeFromNib() {
+	@IBOutlet weak var sport: UILabel!
+	
+	
+	override func awakeFromNib() {
         super.awakeFromNib()
+		
         // Initialization code
+		
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewsTableViewController: UITableViewController {
+class HomeTableViewController: UITableViewController {
     @IBOutlet weak var menuButton:UIBarButtonItem!
 
     override func viewDidLoad() {
@@ -45,25 +45,28 @@ class NewsTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! NewsTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! HomeTableViewCell
 
         // Configure the cell...
         if indexPath.row == 0 {
-            cell.postImageView.image = UIImage(named: "watchkit-intro")
-            cell.postTitleLabel.text = "WatchKit Introduction: Building a Simple Guess Game"
-            cell.authorLabel.text = "Simon Ng"
+            cell.postImageView.image = UIImage(named: "horse")
+            cell.postTitleLabel.text = "This game after 2 days"
+            cell.authorLabel.text = "Wollongong Team"
+			cell.sport.text = "location: "+"Wollongong"
             cell.authorImageView.image = UIImage(named: "author")
 
         } else if indexPath.row == 1 {
-            cell.postImageView.image = UIImage(named: "custom-segue-featured-1024")
-            cell.postTitleLabel.text = "Building a Chat App in Swift Using Multipeer Connectivity Framework"
-            cell.authorLabel.text = "Gabriel Theodoropoulos"
+            cell.postImageView.image = UIImage(named: "AFL_Logo_Clings_Carlton")
+            cell.postTitleLabel.text = "This game after 3 days"
+            cell.authorLabel.text = "AFL Carlton"
+			cell.sport.text = "location: "+"SYD"
             cell.authorImageView.image = UIImage(named: "appcoda-300")
             
         } else {
-            cell.postImageView.image = UIImage(named: "webkit-featured")
-            cell.postTitleLabel.text = "A Beginner’s Guide to Animated Custom Segues in iOS 8"
-            cell.authorLabel.text = "Gabriel Theodoropoulos"
+            cell.postImageView.image = UIImage(named: "AFL_Logo_Clings_Hawthorn")
+            cell.postTitleLabel.text = "This game after 4 days"
+            cell.authorLabel.text = "Hawthorn"
+			cell.sport.text = "location: "+"SYD"
             cell.authorImageView.image = UIImage(named: "appcoda-300")
             
         }
