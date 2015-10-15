@@ -11,7 +11,7 @@
 		B64B58291BCFC08200C62894 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B58281BCFC08200C62894 /* HomeTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		B64B582B1BCFC08700C62894 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B582A1BCFC08700C62894 /* HomeTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B64B582D1BCFC0BC00C62894 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B64B582C1BCFC0BC00C62894 /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
-		B64B582F1BCFC0C900C62894 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B582E1BCFC0C900C62894 /* MapViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		B64B582F1BCFC0C900C62894 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B582E1BCFC0C900C62894 /* TeamViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B64B58311BCFC0CF00C62894 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B58301BCFC0CF00C62894 /* Match.swift */; settings = {ASSET_TAGS = (); }; };
 		B64B58331BCFC0D300C62894 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B58321BCFC0D300C62894 /* MenuController.swift */; settings = {ASSET_TAGS = (); }; };
 		B64B58351BCFC0D700C62894 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B58341BCFC0D700C62894 /* PhotoViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -41,7 +41,7 @@
 		B64B58281BCFC08200C62894 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		B64B582A1BCFC08700C62894 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		B64B582C1BCFC0BC00C62894 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		B64B582E1BCFC0C900C62894 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		B64B582E1BCFC0C900C62894 /* TeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
 		B64B58301BCFC0CF00C62894 /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		B64B58321BCFC0D300C62894 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		B64B58341BCFC0D700C62894 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 				F47029FE1A7F27DB00E30A3C /* LaunchScreen.xib */,
 				B64B58341BCFC0D700C62894 /* PhotoViewController.swift */,
 				B64B58321BCFC0D300C62894 /* MenuController.swift */,
-				B64B582E1BCFC0C900C62894 /* MapViewController.swift */,
+				B64B582E1BCFC0C900C62894 /* TeamViewController.swift */,
 				B64B582A1BCFC08700C62894 /* HomeTableViewController.swift */,
 				B64B58281BCFC08200C62894 /* HomeTableViewCell.swift */,
 				F47029F31A7F27DB00E30A3C /* Supporting Files */,
@@ -266,7 +266,7 @@
 			files = (
 				B64B58331BCFC0D300C62894 /* MenuController.swift in Sources */,
 				B66C7DBF1BBAD724000C542B /* SWRevealViewController.m in Sources */,
-				B64B582F1BCFC0C900C62894 /* MapViewController.swift in Sources */,
+				B64B582F1BCFC0C900C62894 /* TeamViewController.swift in Sources */,
 				B64B58271BCFC01800C62894 /* Player.swift in Sources */,
 				B64B58291BCFC08200C62894 /* HomeTableViewCell.swift in Sources */,
 				B64B58351BCFC0D700C62894 /* PhotoViewController.swift in Sources */,

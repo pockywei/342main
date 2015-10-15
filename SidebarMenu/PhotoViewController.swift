@@ -10,7 +10,12 @@ import UIKit
 
 class PhotoViewController: UIViewController {
     @IBOutlet weak var menuButton:UIBarButtonItem!
+	@IBOutlet weak var User_fullname: UILabel!
+	@IBOutlet weak var Team_belong: UILabel!
 
+	@IBOutlet weak var head_pic: UIImageView!
+	@IBOutlet weak var birthday: UILabel!
+	@IBOutlet weak var location: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 

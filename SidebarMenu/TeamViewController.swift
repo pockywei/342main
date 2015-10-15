@@ -8,9 +8,11 @@
 
 import UIKit
 
-class MapViewController: UIViewController {
-    @IBOutlet weak var menuButton:UIBarButtonItem!
+class TeamViewController: UITableViewController {
+    
+	@IBOutlet weak var menuButton: UIBarButtonItem!
 
+	var team_list = [team]()
     override func viewDidLoad() {
         super.viewDidLoad()
 		if self.revealViewController() != nil {
@@ -19,6 +21,14 @@ class MapViewController: UIViewController {
 			self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
 		}
         // Do any additional setup after loading the view.
+		
+		let team_temp = team(Team_name: "Wollongong A", Team_location: "Wollongong", Team_age_group: 18, Team_grade: 4, Team_Manage: "zhaokk")
+		
+		team_list.append(team_temp)
+		team_list.append(team_temp)
+		team_list.append(team_temp)
+		team_list.append(team_temp)
+		team_list.append(team_temp)
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,6 +37,27 @@ class MapViewController: UIViewController {
     }
     
 
+	
+	override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+		// Return the number of sections.
+		return 1
+	}
+	
+	override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return team_list.count
+	}
+
+	
+	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) 
+		
+		
+		let teamcell = team_list[indexPath.row]
+		
+		cell.textLabel?.text = teamcell.Team_name
+		
+		return cell
+	}
     /*
     // MARK: - Navigation
 
