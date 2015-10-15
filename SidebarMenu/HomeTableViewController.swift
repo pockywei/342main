@@ -10,10 +10,33 @@ import UIKit
 
 class HomeTableViewController: UITableViewController {
     @IBOutlet weak var menuButton:UIBarButtonItem!
-
+	
+	var Matchlist = [Match]()
+	
+	
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
+		
+		let date_temp=NSDate(dateString:"2014-06-06")
+		
+		let IMG = UIImage(named: "horse")
+		let IMG2 = UIImage(named: "AFL_Logo_Clings_Carlton")
+		
+		
+		
+			let Matchs = Match(Matchdate: date_temp, location: "Wollongong", hometeam: "XXX team", awayteam: "Wollongong teamA", img_of_teamA: IMG!, img_of_teamB: IMG2!, tournament: "NSW")
+		
+		
+			Matchlist.append(Matchs)
+			Matchlist.append(Matchs)
+			Matchlist.append(Matchs)
+		
+		
+			
+		
+		
 		if self.revealViewController() != nil {
 			menuButton.target = self.revealViewController()
 			menuButton.action = "revealToggle:"
@@ -38,38 +61,46 @@ class HomeTableViewController: UITableViewController {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // Return the number of rows in the section.
-        return 3
-    }
+	override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return Matchlist.count
+	}
 
-    
+	
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! HomeTableViewCell
 
+		
+		let matchcell = Matchlist[indexPath.row]
+		
+		cell.postImageView.image = matchcell.img_of_teamA
+		cell.postTitleLabel.text = "This game after 2 days"
+		cell.authorLabel.text = "Wollongong Team"
+		cell.sport.text = "location: "+matchcell.location!
+		cell.authorImageView.image = matchcell.img_of_teamA
+		
         // Configure the cell...
-        if indexPath.row == 0 {
-            cell.postImageView.image = UIImage(named: "horse")
-            cell.postTitleLabel.text = "This game after 2 days"
-            cell.authorLabel.text = "Wollongong Team"
-			cell.sport.text = "location: "+"Wollongong"
-            cell.authorImageView.image = UIImage(named: "author")
-
-        } else if indexPath.row == 1 {
-            cell.postImageView.image = UIImage(named: "AFL_Logo_Clings_Carlton")
-            cell.postTitleLabel.text = "This game after 3 days"
-            cell.authorLabel.text = "AFL Carlton"
-			cell.sport.text = "location: "+"SYD"
-            cell.authorImageView.image = UIImage(named: "appcoda-300")
-            
-        } else {
-            cell.postImageView.image = UIImage(named: "AFL_Logo_Clings_Hawthorn")
-            cell.postTitleLabel.text = "This game after 4 days"
-            cell.authorLabel.text = "Hawthorn"
-			cell.sport.text = "location: "+"SYD"
-            cell.authorImageView.image = UIImage(named: "appcoda-300")
-            
-        }
+//        if indexPath.row == 0 {
+//            cell.postImageView.image = UIImage(named: "horse")
+//            cell.postTitleLabel.text = "This game after 2 days"
+//            cell.authorLabel.text = "Wollongong Team"
+//			cell.sport.text = "location: "+"Wollongong"
+//            cell.authorImageView.image = UIImage(named: "author")
+//
+//        } else if indexPath.row == 1 {
+//            cell.postImageView.image = UIImage(named: "AFL_Logo_Clings_Carlton")
+//            cell.postTitleLabel.text = "This game after 3 days"
+//            cell.authorLabel.text = "AFL Carlton"
+//			cell.sport.text = "location: "+"SYD"
+//            cell.authorImageView.image = UIImage(named: "appcoda-300")
+//            
+//        } else {
+//            cell.postImageView.image = UIImage(named: "AFL_Logo_Clings_Hawthorn")
+//            cell.postTitleLabel.text = "This game after 4 days"
+//            cell.authorLabel.text = "Hawthorn"
+//			cell.sport.text = "location: "+"SYD"
+//            cell.authorImageView.image = UIImage(named: "appcoda-300")
+//            
+//        }
 
         return cell
     }
@@ -120,4 +151,16 @@ class HomeTableViewController: UITableViewController {
     }
     */
 
+}
+
+extension NSDate
+{
+	convenience
+	init(dateString:String) {
+		let dateStringFormatter = NSDateFormatter()
+		dateStringFormatter.dateFormat = "yyyy-MM-dd"
+		dateStringFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+		let d = dateStringFormatter.dateFromString(dateString)!
+		self.init(timeInterval:0, sinceDate:d)
+	}
 }

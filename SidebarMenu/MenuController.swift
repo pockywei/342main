@@ -9,7 +9,10 @@
 import UIKit
 
 class MenuController: UITableViewController {
-
+	
+	var role_play = Player()
+	
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,17 +32,75 @@ class MenuController: UITableViewController {
     
     // MARK: - Table view data source
 
+/*
+	override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+		// Return the number of sections.
+		return 1
+	}
+	
+	override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return 4
+	}
 
-    /*
+	
+	
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
 
         // Configure the cell...
+		if indexPath.row == 0 {
+			cell.textLabel?.text = "Hi"+"Player"
+			
+		
+		}
+		else if indexPath.row == 1 {
+			cell.textLabel?.text = "Home"
+			cell.imageView?.image = UIImage(named: "news")
+		
+		}
+		else if indexPath.row == 2 {
+		
+			cell.textLabel?.text = "My team"
+			cell.imageView?.image = UIImage(named: "map")
+		
+		}
+		else if indexPath.row == 3 {
+		
+			cell.textLabel?.text = "Profile"
+			cell.imageView?.image = UIImage(named: "photo")
+		
+		
+		}
+		
+
+
 
         return cell
     }
-    */
-
+	
+	
+	override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath)
+	{
+		if indexPath.row == 1
+		{
+			print("Segue1")
+			self.performSegueWithIdentifier("Match", sender: self)
+		}
+		else if indexPath.row == 2
+		{
+			print("Segue2")
+			self.performSegueWithIdentifier("Team", sender: self)
+		}
+		else if indexPath.row == 3
+		{
+			print("Segue3")
+			self.performSegueWithIdentifier("Profile", sender: self)
+		}
+		
+	}
+	*/
+	
+	
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
