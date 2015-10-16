@@ -162,7 +162,7 @@
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
-                                    <segue destination="30f-b2-6H8" kind="show" identifier="Show_team_detail" trigger="accessoryAction" id="lmA-UY-eZK"/>
+                                    <segue destination="30f-b2-6H8" kind="show" identifier="Show_team_detail" id="sUz-aM-mRX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

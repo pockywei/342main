@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 
@@ -20,11 +21,14 @@ class TeamDetailController:UIViewController{
 	var Team : team?
 	@IBAction func Back_button(sender: AnyObject) {
 		let isPresentingInAddMealMode = presentingViewController is UINavigationController
-		
+		print("1")
 		if isPresentingInAddMealMode {
-			dismissViewControllerAnimated(true, completion: nil)
-		} else {
+			print("2")
 			navigationController!.popViewControllerAnimated(true)
+		} else {
+			print("3")
+			dismissViewControllerAnimated(true, completion: nil)
+			
 		}
 
 	}
@@ -39,6 +43,13 @@ class TeamDetailController:UIViewController{
 			
 			let myString = String(team_detail.Team_grade)
 			Team_grade.text = myString
+			
+			let myString2 = String(team_detail.Team_age_group)
+			Team_age.text = myString2
+			
+			Team_name.text = team_detail.Team_name
+			
+			Team_location.text = team_detail.Team_location
 			
 		
 		

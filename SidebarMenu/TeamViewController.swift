@@ -2,7 +2,7 @@
 //  MapViewController.swift
 //  SidebarMenu
 //
-//  Created by Simon Ng on 2/2/15.
+//  Created by Simon WEI on 10/2/15.
 //  Copyright (c) 2015 AppCoda. All rights reserved.
 //
 
@@ -63,7 +63,9 @@ class TeamViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-		if segue.identifier == "show_team_detail" {
+		print("Show_team_detail")
+		if segue.identifier == "Show_team_detail" {
+			print("Show_team_detail")
 			let view = segue.destinationViewController as! UINavigationController
 			let teamDetailViewController = view.topViewController as! TeamDetailController
 			
