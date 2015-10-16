@@ -58,14 +58,41 @@ class TeamViewController: UITableViewController {
 		
 		return cell
 	}
-    /*
+	
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.identifier == "show_team_detail" {
+			let view = segue.destinationViewController as! UINavigationController
+			let teamDetailViewController = view.topViewController as! TeamDetailController
+			
+			if let selectedMealCell = sender as? UITableViewCell {
+				let indexPath = tableView.indexPathForCell(selectedMealCell)!
+				//if(searchActive){
+					let selectedMeal = team_list[indexPath.row]
+					teamDetailViewController.Team = selectedMeal
+				
+					
+				//}
+//				else{
+//					let selectedMeal = clipping[indexPath.row]
+//					mealDetailViewController.clip = selectedMeal
+//					mealDetailViewController.coll_detail = coll
+//					
+//				}
+				
+				
+				
+			}
+			
+			
+			
+			
+		}
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+	
 
 }

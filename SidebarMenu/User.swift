@@ -12,9 +12,11 @@ import Foundation
 
 class User{
 
-	var player = Player()
-	var referee = Referee()
+	//var player : Player?
+	var referee : Referee?
 
+	
+	
 
 
 }

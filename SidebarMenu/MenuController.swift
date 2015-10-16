@@ -10,7 +10,7 @@ import UIKit
 
 class MenuController: UITableViewController {
 	
-	var role_play = Player()
+	//var role_play = Player()
 	
 	
     override func viewDidLoad() {
