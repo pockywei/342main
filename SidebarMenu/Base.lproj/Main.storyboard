@@ -269,6 +269,39 @@
             </objects>
             <point key="canvasLocation" x="4319" y="19"/>
         </scene>
+        <!--Avaliblity Controller-->
+        <scene sceneID="GfI-9h-srZ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gZA-XQ-k1F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="IaD-Oh-26e" customClass="AvaliblityController" customModule="SidebarMenu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SAV-Oj-Vrs"/>
+                        <viewControllerLayoutGuide type="bottom" id="GkT-dy-6zU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wUh-al-9Ca">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ozh-en-DXp">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <animations/>
+                                <items>
+                                    <navigationItem title="Title" id="7oc-1G-E2c">
+                                        <barButtonItem key="leftBarButtonItem" image="menu" id="lbn-Kn-EtJ"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="BarButtom" destination="lbn-Kn-EtJ" id="dz7-0g-bKs"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="761" y="-788"/>
+        </scene>
         <!--Menu Controller-->
         <scene sceneID="WvI-gM-KFV">
             <objects>
@@ -418,6 +451,9 @@
                             <outlet property="delegate" destination="c8U-hf-vWv" id="9uP-Be-CBa"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="IaD-Oh-26e" kind="custom" identifier="showManual" customClass="SWRevealViewControllerSegueSetController" id="5J2-eE-zO2"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eHO-uu-C6D" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="gGL-Yg-g6J">
@@ -619,6 +655,7 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vaw-wK-hlz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <barButtonItem image="menu" id="mXV-D8-5v3"/>
             </objects>
             <point key="canvasLocation" x="1752" y="1545"/>
         </scene>
@@ -631,6 +668,6 @@
         <image name="photo" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cWa-oB-HJ2"/>
+        <segue reference="cvm-mL-y4K"/>
     </inferredMetricsTieBreakers>
 </document>

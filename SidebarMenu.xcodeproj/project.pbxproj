@@ -21,6 +21,7 @@
 		B64B583D1BD0A9F700C62894 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B583C1BD0A9F700C62894 /* Offer.swift */; settings = {ASSET_TAGS = (); }; };
 		B64B583F1BD0AA4E00C62894 /* OfferTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B583E1BD0AA4E00C62894 /* OfferTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B64B58411BD0FCF700C62894 /* TeamDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B58401BD0FCF700C62894 /* TeamDetailController.swift */; settings = {ASSET_TAGS = (); }; };
+		B64B58521BD7616600C62894 /* AvaliblityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B58511BD7616600C62894 /* AvaliblityController.swift */; settings = {ASSET_TAGS = (); }; };
 		B66C7DBF1BBAD724000C542B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B66C7DBE1BBAD724000C542B /* SWRevealViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F47029F61A7F27DB00E30A3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47029F51A7F27DB00E30A3C /* AppDelegate.swift */; };
 		F47029FB1A7F27DB00E30A3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F47029F91A7F27DB00E30A3C /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		B64B583C1BD0A9F700C62894 /* Offer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
 		B64B583E1BD0AA4E00C62894 /* OfferTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferTableViewController.swift; sourceTree = "<group>"; };
 		B64B58401BD0FCF700C62894 /* TeamDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamDetailController.swift; sourceTree = "<group>"; };
+		B64B58511BD7616600C62894 /* AvaliblityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvaliblityController.swift; sourceTree = "<group>"; };
 		B66C7DBC1BBAD723000C542B /* SidebarMenu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SidebarMenu-Bridging-Header.h"; sourceTree = "<group>"; };
 		B66C7DBD1BBAD724000C542B /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		B66C7DBE1BBAD724000C542B /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				B64B583E1BD0AA4E00C62894 /* OfferTableViewController.swift */,
 				F47029F31A7F27DB00E30A3C /* Supporting Files */,
 				B64B58401BD0FCF700C62894 /* TeamDetailController.swift */,
+				B64B58511BD7616600C62894 /* AvaliblityController.swift */,
 			);
 			path = SidebarMenu;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				B64B58291BCFC08200C62894 /* HomeTableViewCell.swift in Sources */,
 				B64B58351BCFC0D700C62894 /* PhotoViewController.swift in Sources */,
 				B64B58371BCFC0DC00C62894 /* Referee.swift in Sources */,
+				B64B58521BD7616600C62894 /* AvaliblityController.swift in Sources */,
 				F47029F61A7F27DB00E30A3C /* AppDelegate.swift in Sources */,
 				B64B583B1BCFC0E600C62894 /* User.swift in Sources */,
 				B64B58391BCFC0E000C62894 /* Team.swift in Sources */,
