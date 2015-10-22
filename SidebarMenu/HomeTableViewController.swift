@@ -13,11 +13,23 @@ class HomeTableViewController: UITableViewController {
 	
 	var Matchlist = [Match]()
 	
+	struct tableCellData {
+		var teamAId : Int
+		var teamBId : Int
+		var locationId : Int
+		
+		init(data: NSDictionary) {
+			teamAId = data["teamAId"] as! Int
+			teamBId = data["teamBId"] as! Int
+			locationId = data["locationId"] as! Int
+		}
+	}
 	
+	var records = [tableCellData]()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-
+		getRemoteData()
 		
 		let date_temp=NSDate(dateString:"2014-06-06")
 		
@@ -26,7 +38,7 @@ class HomeTableViewController: UITableViewController {
 		
 		
 		
-			let Matchs = Match(Matchdate: date_temp, location: "Wollongong", hometeam: "XXX team", awayteam: "Wollongong teamA", img_of_teamA: IMG!, img_of_teamB: IMG2!, tournament: "NSW")
+			let Matchs = Match(Matchdate: date_temp, location: "Wollongong", hometeam: "XXX team", awayteam: "Wollongong teamA", img_of_teamA: IMG!, img_of_teamB: IMG2!, tournament: "NSW games")
 		
 		
 			Matchlist.append(Matchs)
@@ -49,6 +61,54 @@ class HomeTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+	func getRemoteData() {
+		let url = NSURL(string: "http://342.azurewebsites.net/api/matches")
+		let session = NSURLSession.sharedSession()
+		
+		let request = NSMutableURLRequest(URL: url!)
+		
+		let task = session.dataTaskWithRequest(request) {
+			(let data, let response, let error) in
+			guard let _:NSData = data, let _:NSURLResponse = response where error == nil else {
+				print("error")
+				return
+			}
+			
+			dispatch_async(dispatch_get_main_queue(), {
+				let json = NSString(data: data!, encoding: NSASCIIStringEncoding)
+				self.initialTableArray(json!)
+				print("get it")
+				return
+			})
+		}
+		task.resume()
+	}
+	
+	func initialTableArray(data : NSString) {
+		var parseError: NSError?
+		let jsonData:NSData = data.dataUsingEncoding(NSASCIIStringEncoding)!
+		let json: AnyObject?
+		do {
+			json = try NSJSONSerialization.JSONObjectWithData(jsonData, options: [])
+		} catch let error as NSError {
+			parseError = error
+			json = nil
+		}
+		
+		if (parseError == nil) {
+			if let list = json as? NSArray {
+				for (var i = 0; i < list.count; i++) {
+					if let dataBlock = list[i] as? NSDictionary {
+						records.append(tableCellData(data: dataBlock))
+						print(records[records.count-1])
+					}
+				}
+			}
+		}
+		//refershTable()
+	}
+	
+	
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -141,15 +201,45 @@ class HomeTableViewController: UITableViewController {
     }
     */
 
-    /*
+	
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+		print("Show_team_detail")
+		if segue.identifier == "Show_Detail_Match" {
+			print("Show_team_detail")
+			let view = segue.destinationViewController as! UINavigationController
+			let matchDetailViewController = view.topViewController as! Match_detailController
+			
+			if let selectedMealCell = sender as? UITableViewCell {
+				let indexPath = tableView.indexPathForCell(selectedMealCell)!
+				//if(searchActive){
+				let selectedMeal = Matchlist[indexPath.row]
+				matchDetailViewController.match = selectedMeal
+				
+				
+				//}
+				//				else{
+				//					let selectedMeal = clipping[indexPath.row]
+				//					mealDetailViewController.clip = selectedMeal
+				//					mealDetailViewController.coll_detail = coll
+				//
+				//				}
+				
+				
+				
+			}
+			
+			
+			
+			
+		}
+
     }
-    */
+    
 
 }
 

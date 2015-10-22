@@ -13,7 +13,7 @@ import Foundation
 class User{
 
 	//var player : Player?
-	var referee : Referee?
+	//var referee : Referee?
 
 	
 	
