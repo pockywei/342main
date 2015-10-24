@@ -11,6 +11,7 @@ import UIKit
 class HomeTableViewController: UITableViewController {
     @IBOutlet weak var menuButton:UIBarButtonItem!
 	
+	var id:String?
 	var Matchlist = [Match]()
 	
 	struct tableCellData {

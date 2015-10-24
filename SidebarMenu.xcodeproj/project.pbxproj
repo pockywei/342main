@@ -24,6 +24,13 @@
 		B64B58541BD8B4E900C62894 /* login_page.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B58531BD8B4E900C62894 /* login_page.swift */; settings = {ASSET_TAGS = (); }; };
 		B64B58561BD9076C00C62894 /* Match_detailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B58551BD9076C00C62894 /* Match_detailController.swift */; settings = {ASSET_TAGS = (); }; };
 		B66C7DBF1BBAD724000C542B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B66C7DBE1BBAD724000C542B /* SWRevealViewController.m */; settings = {ASSET_TAGS = (); }; };
+		B6A45BCA1BD9227300D9ED39 /* AcceptOfferController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A45BC91BD9227300D9ED39 /* AcceptOfferController.swift */; settings = {ASSET_TAGS = (); }; };
+		B6A45BCC1BD922AE00D9ED39 /* DeclineOfferController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A45BCB1BD922AE00D9ED39 /* DeclineOfferController.swift */; settings = {ASSET_TAGS = (); }; };
+		B6A45BCE1BD9298500D9ED39 /* WaittingOfferController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A45BCD1BD9298500D9ED39 /* WaittingOfferController.swift */; settings = {ASSET_TAGS = (); }; };
+		B6A45BD01BD9ED3800D9ED39 /* DeclinedOfferDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A45BCF1BD9ED3800D9ED39 /* DeclinedOfferDetail.swift */; settings = {ASSET_TAGS = (); }; };
+		B6A45BD21BD9ED8300D9ED39 /* AcceptedOfferDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A45BD11BD9ED8300D9ED39 /* AcceptedOfferDetail.swift */; settings = {ASSET_TAGS = (); }; };
+		B6A45BD41BD9F86000D9ED39 /* OfferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A45BD31BD9F86000D9ED39 /* OfferCell.swift */; settings = {ASSET_TAGS = (); }; };
+		B6A45BD61BDA16FC00D9ED39 /* About_us_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A45BD51BDA16FC00D9ED39 /* About_us_ViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		F47029F61A7F27DB00E30A3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47029F51A7F27DB00E30A3C /* AppDelegate.swift */; };
 		F47029FB1A7F27DB00E30A3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F47029F91A7F27DB00E30A3C /* Main.storyboard */; };
 		F4702A001A7F27DC00E30A3C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47029FE1A7F27DB00E30A3C /* LaunchScreen.xib */; };
@@ -61,6 +68,13 @@
 		B66C7DBC1BBAD723000C542B /* SidebarMenu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SidebarMenu-Bridging-Header.h"; sourceTree = "<group>"; };
 		B66C7DBD1BBAD724000C542B /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		B66C7DBE1BBAD724000C542B /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		B6A45BC91BD9227300D9ED39 /* AcceptOfferController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptOfferController.swift; sourceTree = "<group>"; };
+		B6A45BCB1BD922AE00D9ED39 /* DeclineOfferController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeclineOfferController.swift; path = ../DeclineOfferController.swift; sourceTree = "<group>"; };
+		B6A45BCD1BD9298500D9ED39 /* WaittingOfferController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WaittingOfferController.swift; path = ../WaittingOfferController.swift; sourceTree = "<group>"; };
+		B6A45BCF1BD9ED3800D9ED39 /* DeclinedOfferDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeclinedOfferDetail.swift; path = ../DeclinedOfferDetail.swift; sourceTree = "<group>"; };
+		B6A45BD11BD9ED8300D9ED39 /* AcceptedOfferDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AcceptedOfferDetail.swift; path = ../AcceptedOfferDetail.swift; sourceTree = "<group>"; };
+		B6A45BD31BD9F86000D9ED39 /* OfferCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OfferCell.swift; path = ../OfferCell.swift; sourceTree = "<group>"; };
+		B6A45BD51BDA16FC00D9ED39 /* About_us_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = About_us_ViewController.swift; path = ../About_us_ViewController.swift; sourceTree = "<group>"; };
 		F47029F01A7F27DB00E30A3C /* SidebarMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SidebarMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F47029F41A7F27DB00E30A3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F47029F51A7F27DB00E30A3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,15 +142,23 @@
 				F47029F51A7F27DB00E30A3C /* AppDelegate.swift */,
 				F47029F91A7F27DB00E30A3C /* Main.storyboard */,
 				F47029FE1A7F27DB00E30A3C /* LaunchScreen.xib */,
+				B64B58531BD8B4E900C62894 /* login_page.swift */,
 				B64B58321BCFC0D300C62894 /* MenuController.swift */,
 				B64B582E1BCFC0C900C62894 /* TeamViewController.swift */,
+				B6A45BD51BDA16FC00D9ED39 /* About_us_ViewController.swift */,
 				B64B582A1BCFC08700C62894 /* HomeTableViewController.swift */,
-				B64B58281BCFC08200C62894 /* HomeTableViewCell.swift */,
+				B6A45BCD1BD9298500D9ED39 /* WaittingOfferController.swift */,
+				B6A45BCB1BD922AE00D9ED39 /* DeclineOfferController.swift */,
+				B6A45BC91BD9227300D9ED39 /* AcceptOfferController.swift */,
 				B64B583E1BD0AA4E00C62894 /* OfferTableViewController.swift */,
+				B64B58341BCFC0D700C62894 /* PhotoViewController.swift */,
+				B64B58281BCFC08200C62894 /* HomeTableViewCell.swift */,
+				B6A45BD31BD9F86000D9ED39 /* OfferCell.swift */,
 				F47029F31A7F27DB00E30A3C /* Supporting Files */,
-				B64B58401BD0FCF700C62894 /* TeamDetailController.swift */,
+				B6A45BCF1BD9ED3800D9ED39 /* DeclinedOfferDetail.swift */,
+				B6A45BD11BD9ED8300D9ED39 /* AcceptedOfferDetail.swift */,
 				B64B58551BD9076C00C62894 /* Match_detailController.swift */,
-				B64B58531BD8B4E900C62894 /* login_page.swift */,
+				B64B58401BD0FCF700C62894 /* TeamDetailController.swift */,
 			);
 			path = SidebarMenu;
 			sourceTree = "<group>";
@@ -144,7 +166,6 @@
 		F47029F31A7F27DB00E30A3C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B64B58341BCFC0D700C62894 /* PhotoViewController.swift */,
 				B64B58301BCFC0CF00C62894 /* Match.swift */,
 				B64B583A1BCFC0E600C62894 /* User.swift */,
 				B64B58381BCFC0E000C62894 /* Team.swift */,
@@ -281,20 +302,27 @@
 			files = (
 				B64B58561BD9076C00C62894 /* Match_detailController.swift in Sources */,
 				B64B58541BD8B4E900C62894 /* login_page.swift in Sources */,
+				B6A45BD01BD9ED3800D9ED39 /* DeclinedOfferDetail.swift in Sources */,
 				B64B58411BD0FCF700C62894 /* TeamDetailController.swift in Sources */,
 				B64B58331BCFC0D300C62894 /* MenuController.swift in Sources */,
 				B66C7DBF1BBAD724000C542B /* SWRevealViewController.m in Sources */,
 				B64B583D1BD0A9F700C62894 /* Offer.swift in Sources */,
 				B64B582F1BCFC0C900C62894 /* TeamViewController.swift in Sources */,
+				B6A45BD41BD9F86000D9ED39 /* OfferCell.swift in Sources */,
 				B64B583F1BD0AA4E00C62894 /* OfferTableViewController.swift in Sources */,
+				B6A45BCA1BD9227300D9ED39 /* AcceptOfferController.swift in Sources */,
 				B64B58271BCFC01800C62894 /* Player.swift in Sources */,
 				B64B58291BCFC08200C62894 /* HomeTableViewCell.swift in Sources */,
 				B64B58351BCFC0D700C62894 /* PhotoViewController.swift in Sources */,
 				B64B58371BCFC0DC00C62894 /* Referee.swift in Sources */,
 				F47029F61A7F27DB00E30A3C /* AppDelegate.swift in Sources */,
+				B6A45BD61BDA16FC00D9ED39 /* About_us_ViewController.swift in Sources */,
 				B64B583B1BCFC0E600C62894 /* User.swift in Sources */,
 				B64B58391BCFC0E000C62894 /* Team.swift in Sources */,
+				B6A45BCC1BD922AE00D9ED39 /* DeclineOfferController.swift in Sources */,
+				B6A45BCE1BD9298500D9ED39 /* WaittingOfferController.swift in Sources */,
 				B64B582B1BCFC08700C62894 /* HomeTableViewController.swift in Sources */,
+				B6A45BD21BD9ED8300D9ED39 /* AcceptedOfferDetail.swift in Sources */,
 				B64B58311BCFC0CF00C62894 /* Match.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

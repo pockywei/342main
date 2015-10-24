@@ -11,13 +11,26 @@ import Foundation
 
 class loing_page:UIViewController{
 
-
+	let user = User.sharedInstance
+	
+	
 	@IBOutlet weak var Username: UITextField!
 	@IBOutlet weak var Password: UITextField!
 
+	override func viewDidAppear(animated: Bool) {
+		
+		
+		
+		//id="auauau"
+		//self.performSegueWithIdentifier("login", sender: self)
+	}
+	
+	
+	
+	
 	
 	func post2PHP() {
-		let myUrl = NSURL(string: "http://")
+		let myUrl = NSURL(string: "http://www.")
 		let request = NSMutableURLRequest(URL:myUrl!);
 		request.HTTPMethod = "POST";
 		// Compose a query string
@@ -45,6 +58,29 @@ class loing_page:UIViewController{
 		}
 		
 		task.resume()
+	}
+	
+	override func didReceiveMemoryWarning() {
+		super.didReceiveMemoryWarning()
+		// Dispose of any resources that can be recreated.
+	}
+	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.identifier=="login"
+		{
+			//print(re!.username)
+			
+			
+			
+			
+			
+				//colorViewController.referee.username = re!.username
+				self.user.userId = 42
+				self.user.name = "Anthoni Giskegjerde"
+				
+			
+		}
+		
 	}
 
 }

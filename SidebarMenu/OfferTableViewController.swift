@@ -12,6 +12,7 @@ import Foundation
 
 
 class OfferTableViewController: UIViewController{
+	@IBOutlet weak var pendingOffer: UIImageView!
 
 	@IBOutlet weak var menuButton: UIBarButtonItem!
 	
@@ -21,6 +22,11 @@ class OfferTableViewController: UIViewController{
 	super.viewDidLoad()
 		self.Accept.userInteractionEnabled = true
 		self.Decline.userInteractionEnabled = true
+		self.pendingOffer.userInteractionEnabled = true
+		
+		let tapGesture_pending = UITapGestureRecognizer(target: self, action: Selector("handleTap_pending:"))
+		
+		
 		let tapGesture_accept = UITapGestureRecognizer(target: self, action: Selector("handleTap_accept:"))
 		
 		let tapGesture_decline = UITapGestureRecognizer(target: self, action: Selector("handleTap_decline:"))
@@ -32,9 +38,21 @@ class OfferTableViewController: UIViewController{
 			self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
 		}
 		
+		pendingOffer.addGestureRecognizer(tapGesture_pending)
 		Decline.addGestureRecognizer(tapGesture_decline)
 		Accept.addGestureRecognizer(tapGesture_accept)
 	
+	}
+	
+	func handleTap_pending(sender : UIImageView) {
+		
+		print("Tap Gesture recognized pending")
+		self.performSegueWithIdentifier("waitting_offer", sender: self)
+		
+		
+		
+		// Only allow photos to be picked, not taken.
+		
 	}
 	
 	
@@ -42,7 +60,7 @@ class OfferTableViewController: UIViewController{
 	func handleTap_accept(sender : UIImageView) {
 		
 		print("Tap Gesture recognized accept")
-		
+		self.performSegueWithIdentifier("accept_segues", sender: self)
 		
 		// Only allow photos to be picked, not taken.
 		
@@ -52,11 +70,15 @@ class OfferTableViewController: UIViewController{
 	func handleTap_decline(sender : UIImageView) {
 		
 		print("Tap Gesture recognized decline")
+		self.performSegueWithIdentifier("decline_segues", sender: self)
 		
 		
 		// Only allow photos to be picked, not taken.
 		
 	}
+	
+	
+	
 	
 	
 	
