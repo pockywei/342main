@@ -19,6 +19,8 @@ class Referee{
 	//var team_belong : [String]?
 	
 	var birthday : String?
+	var username : String?
+	var password : String?
 	
 	init(){}
 	

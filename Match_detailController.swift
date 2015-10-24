@@ -32,6 +32,24 @@ class Match_detailController:UIViewController{
 	@IBOutlet weak var tournament_name: UILabel!
 	var match : Match?
 	
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+
+	if let matchdetail = match{
+		
+		teamAname.text = matchdetail.hometeam
+		teamBname.text = matchdetail.awayteam
+		matchdate.text = String(matchdetail.Matchdate)
+		MatchLocation.text = matchdetail.location
+		tournament_name.text = matchdetail.tournament
+		
+		}
+	}
+	
+	
+	
+	
 
 
 }
