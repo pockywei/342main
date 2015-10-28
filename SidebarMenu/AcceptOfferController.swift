@@ -12,7 +12,7 @@ import Foundation
 
 
 class AcceptOfferController:UITableViewController{
-	
+	let user = User.sharedInstance
 	
 	
 	
@@ -30,36 +30,29 @@ class AcceptOfferController:UITableViewController{
 	}
 	
 	
-	struct tableCellData {
-		var teamAId : Int
-		var teamBId : Int
-		var locationId : Int
-		
-		init(data: NSDictionary) {
-			teamAId = data["teamAId"] as! Int
-			teamBId = data["teamBId"] as! Int
-			locationId = data["locationId"] as! Int
-		}
-	}
-	
-	var records = [tableCellData]()
-	var offerlist = [Offer]()
+		var offerlist = [Offer]()
 	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		let offer = Offer(Match_date: "10/10/2015", TeamA_name: "Team A", TeamB_name: "Team B", Tournament: "NSW game")
+		let blurEffect =  UIBlurEffect(style: UIBlurEffectStyle.Light)
+		let bluredEffectView = UIVisualEffectView(effect: blurEffect)
+		bluredEffectView.frame = CGRectMake(-13, 0, 380, 700)
+		self.view.addSubview(bluredEffectView)
+		self.view.sendSubviewToBack(bluredEffectView)
+
 		
-		offerlist.append(offer)
-		offerlist.append(offer)
-		offerlist.append(offer)
-		offerlist.append(offer)
+		self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ceystalhorizon")!)
+		getRemoteData()
+		
+		
 		
 	}
 	
 	func getRemoteData() {
-		let url = NSURL(string: "http://342.azurewebsites.net/api/matches")
+		let url = NSURL(string: "http://csci342.azurewebsites.net/api/AcceptedOffers/" + user.userId + "?userId=" + user.name)
+		print(url)
 		let session = NSURLSession.sharedSession()
 		
 		let request = NSMutableURLRequest(URL: url!)
@@ -74,6 +67,7 @@ class AcceptOfferController:UITableViewController{
 			dispatch_async(dispatch_get_main_queue(), {
 				let json = NSString(data: data!, encoding: NSASCIIStringEncoding)
 				self.initialTableArray(json!)
+				print(json)
 				print("get it")
 				return
 			})
@@ -96,15 +90,22 @@ class AcceptOfferController:UITableViewController{
 			if let list = json as? NSArray {
 				for (var i = 0; i < list.count; i++) {
 					if let dataBlock = list[i] as? NSDictionary {
-						records.append(tableCellData(data: dataBlock))
-						print(records[records.count-1])
+						offerlist.append(Offer(data: dataBlock))
+						print(offerlist[offerlist.count-1])
 					}
 				}
 			}
 		}
-		//refershTable()
+		refershTable()
 	}
 	
+	func refershTable() {
+		dispatch_async(dispatch_get_main_queue(), {
+			self.tableView.reloadData()
+			return
+		})
+	}
+
 	
 	override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
 		// Return the number of sections.
@@ -125,10 +126,13 @@ class AcceptOfferController:UITableViewController{
 		
 		
 		
-		cell.Tournament.text = offer_cell.Tournament
+		cell.Tournament.text = "Name of location: "+offer_cell.nameOfLocation
 		
-		cell.Offer_date.text = offer_cell.Match_date
+		cell.Offer_date.text = "Date of offer: "+offer_cell.dateOfOffer
 		
+		cell.textLabel?.textColor = UIColor.whiteColor()
+		
+		cell.Offer_date.textColor = UIColor.whiteColor()
 		
 		return cell
 		

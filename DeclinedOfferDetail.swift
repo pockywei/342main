@@ -17,9 +17,7 @@ class DeclinedOfferDetail:UIViewController{
 	
 	var declineOffer:Offer?
 
-	@IBOutlet weak var Tournament: UILabel!
 
-	@IBOutlet weak var HomeTeam: UILabel!
 	@IBAction func back_button(sender: AnyObject) {
 		let isPresentingInAddMealMode = presentingViewController is UINavigationController
 		print("1")
@@ -34,30 +32,34 @@ class DeclinedOfferDetail:UIViewController{
 		
 	}
 
-	@IBOutlet weak var AwayTeam: UILabel!
-
+	
+	@IBOutlet weak var decline_reason: UILabel!
+	
+	@IBOutlet weak var location: UILabel!
+	
+	@IBOutlet weak var matchdate: UILabel!
+	
+	
 	@IBOutlet weak var Offer_Date: UILabel!
+
+	@IBOutlet weak var sb: UIImageView!
 	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		let blurEffect =  UIBlurEffect(style: UIBlurEffectStyle.Light)
+		let bluredEffectView = UIVisualEffectView(effect: blurEffect)
+		bluredEffectView.frame = CGRectMake(-13, 0, 380, 700)
+		self.sb.addSubview(bluredEffectView)
+
 	
 	if let declineOffer_tetail = declineOffer {
 		
-		Tournament.text = declineOffer_tetail.Tournament
-		
-		
-		HomeTeam.text = declineOffer_tetail.TeamA_name
-		
-		
-		AwayTeam.text = declineOffer_tetail.TeamB_name
-		
-		Offer_Date.text = declineOffer_tetail.Match_date
-		
-		
-		
-		
-		
+		decline_reason.text	= declineOffer_tetail.declinedReason
+		location.text=declineOffer_tetail.nameOfLocation
+		matchdate.text=declineOffer_tetail.dateOfMatch
+		Offer_Date.text=declineOffer_tetail.dateOfOffer
 	}
 	
 	}

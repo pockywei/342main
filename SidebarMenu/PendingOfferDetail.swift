@@ -1,8 +1,8 @@
 //
-//  AcceptedOfferDetail.swift
+//  PendingOfferDetail.swift
 //  SidebarMenu
 //
-//  Created by WEI on 15/10/23.
+//  Created by WEI on 15/10/24.
 //  Copyright © 2015年 AppCoda. All rights reserved.
 //
 
@@ -10,9 +10,20 @@ import Foundation
 
 
 
-class AcceptedOfferDetail:UIViewController{
+class PendingOfferDetail:UIViewController{
 
-	var acceptOffer:Offer?
+	@IBOutlet weak var sb: UIImageView!
+	var pendingOffer:Offer?
+	
+	@IBOutlet weak var decline_reason: UILabel!
+	
+	@IBOutlet weak var location: UILabel!
+	
+	@IBOutlet weak var matchdate: UILabel!
+	
+	
+	@IBOutlet weak var Offer_Date: UILabel!
+
 
 	@IBAction func back_button(sender: AnyObject) {
 		let isPresentingInAddMealMode = presentingViewController is UINavigationController
@@ -26,21 +37,7 @@ class AcceptedOfferDetail:UIViewController{
 			
 		}
 		
-	
 	}
-	
-
-	@IBOutlet weak var decline_reason: UILabel!
-
-	@IBOutlet weak var location: UILabel!
-
-	@IBOutlet weak var matchdate: UILabel!
-	
-	
-	@IBOutlet weak var Offer_Date: UILabel!
-	
-	@IBOutlet weak var sb: UIImageView!
-	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -50,24 +47,22 @@ class AcceptedOfferDetail:UIViewController{
 		bluredEffectView.frame = CGRectMake(-13, 0, 380, 700)
 		self.sb.addSubview(bluredEffectView)
 
-		if let acceptOffer_tetail = acceptOffer {
-			
-			let index=acceptOffer_tetail.dateOfOffer.startIndex.advancedBy(10)
-			
-			
-			decline_reason.text=""
-			
-			location.text=acceptOffer_tetail.nameOfLocation
-			
-			Offer_Date.text=acceptOffer_tetail.dateOfOffer.substringToIndex(index)
-			
-			matchdate.text=acceptOffer_tetail.dateOfMatch.substringToIndex(index)
-			
-		}
+
+	
+	if let pending = pendingOffer{
+		decline_reason.text = pending.declinedReason
+		
+		location.text = pending.nameOfLocation
+		
+		matchdate.text = pending.dateOfMatch
 		
 		
-		
+		Offer_Date.text = pending.dateOfOffer
 	}
+	
+	
+	}
+
 
 
 }

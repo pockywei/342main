@@ -10,41 +10,26 @@ import UIKit
 
 class HomeTableViewController: UITableViewController {
     @IBOutlet weak var menuButton:UIBarButtonItem!
-	
+	let user = User.sharedInstance
 	var id:String?
 	var Matchlist = [Match]()
+	var hometeamID = [Int]()
 	
-	struct tableCellData {
-		var teamAId : Int
-		var teamBId : Int
-		var locationId : Int
-		
-		init(data: NSDictionary) {
-			teamAId = data["teamAId"] as! Int
-			teamBId = data["teamBId"] as! Int
-			locationId = data["locationId"] as! Int
-		}
-	}
+	@IBOutlet weak var indecate: UIActivityIndicatorView!
 	
-	var records = [tableCellData]()
 	
+	let apibaseurl = "http://csci342.azurewebsites.net/api/matchApi/"
     override func viewDidLoad() {
         super.viewDidLoad()
+		indecate.startAnimating()
 		getRemoteData()
 		
-		let date_temp=NSDate(dateString:"2014-06-06")
-		
-		let IMG = UIImage(named: "horse")
-		let IMG2 = UIImage(named: "AFL_Logo_Clings_Carlton")
 		
 		
+		//let IMG = UIImage(named: "horse")
 		
-			let Matchs = Match(Matchdate: date_temp, location: "Wollongong", hometeam: "XXX team", awayteam: "Wollongong teamA", img_of_teamA: IMG!, img_of_teamB: IMG2!, tournament: "NSW games")
 		
 		
-			Matchlist.append(Matchs)
-			Matchlist.append(Matchs)
-			Matchlist.append(Matchs)
 		
 		
 			
@@ -63,7 +48,7 @@ class HomeTableViewController: UITableViewController {
     }
 
 	func getRemoteData() {
-		let url = NSURL(string: "http://342.azurewebsites.net/api/matches")
+		let url = NSURL(string: apibaseurl + user.userId)
 		let session = NSURLSession.sharedSession()
 		
 		let request = NSMutableURLRequest(URL: url!)
@@ -78,6 +63,7 @@ class HomeTableViewController: UITableViewController {
 			dispatch_async(dispatch_get_main_queue(), {
 				let json = NSString(data: data!, encoding: NSASCIIStringEncoding)
 				self.initialTableArray(json!)
+				print(json)
 				print("get it")
 				return
 			})
@@ -97,18 +83,79 @@ class HomeTableViewController: UITableViewController {
 		}
 		
 		if (parseError == nil) {
-			if let list = json as? NSArray {
-				for (var i = 0; i < list.count; i++) {
-					if let dataBlock = list[i] as? NSDictionary {
-						records.append(tableCellData(data: dataBlock))
-						print(records[records.count-1])
+			print("hello")
+			//if let list = json as? NSArray {
+				//for (var i = 0; i < list.count; i++) {
+					if let dataBlock = json as? NSDictionary {
+						print("hello2")
+						//print(dataBlock["myUpcommingReferee"])
+						if let myUpcommingReferee = dataBlock["myUpcommingReferee"] as? NSArray
+						{
+							//if let list = json as? NSArray {
+								for (var i = 0; i < myUpcommingReferee.count; i++) {
+									if let matchdetail = myUpcommingReferee[i] as? NSDictionary {
+										print(matchdetail)
+										Matchlist.append(Match(data: matchdetail))
+										if let homeid = matchdetail["teamAId"] as? Int
+										{
+											hometeamID.append(homeid)
+										}
+										
+										print(Matchlist[Matchlist.count-1])
+									}
+									else
+									{
+										print("no data of match")
+									}
+								}
+							
+							user.hometeamid = hometeamID
+							
+							print(user.hometeamid)
+							//}
+							
+							indecate.stopAnimating()
+							
+							
+							//print(myUpcommingReferee)
+						}
+						else{
+							var tField: UITextField!
+							
+							indecate.stopAnimating()
+							
+							indecate.hidden=true
+							
+							func handleCancel(alertView: UIAlertAction!)
+							{
+								print("Cancelled !!")
+							}
+							var alert = UIAlertController(title: "No upcoming match", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+							
+							
+							alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler:handleCancel))
+							self.presentViewController(alert, animated: true, completion: {
+								print("completion block")
+							})
+							
+							print("no data")
+						}
+						//records.append(tableCellData(data: dataBlock))
+						//print(records[records.count-1])
 					}
-				}
-			}
+				//}
+			//}
 		}
-		//refershTable()
+		refershTable()
 	}
 	
+	func refershTable() {
+		dispatch_async(dispatch_get_main_queue(), {
+			self.indecate.hidden=true
+			self.tableView.reloadData()
+			return
+		})
+	}
 	
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -133,11 +180,23 @@ class HomeTableViewController: UITableViewController {
 		
 		let matchcell = Matchlist[indexPath.row]
 		
-		cell.postImageView.image = matchcell.img_of_teamA
-		cell.postTitleLabel.text = "This game after 2 days"
-		cell.authorLabel.text = "Wollongong Team"
-		cell.sport.text = "location: "+matchcell.location!
-		cell.authorImageView.image = matchcell.img_of_teamA
+		cell.postImageView.image = UIImage(named: "horse")
+		
+		let index=Matchlist[indexPath.row].matchDate.startIndex.advancedBy(11)
+		
+		let index2=Matchlist[indexPath.row].matchDate.startIndex.advancedBy(10)
+		
+		var time = ""
+		var date = ""
+		
+		date = Matchlist[indexPath.row].matchDate.substringToIndex(index2)
+		time = Matchlist[indexPath.row].matchDate.substringFromIndex(index)
+		
+		cell.postTitleLabel.text = "The game Date: " + date + "               The time is: " + time
+		cell.authorLabel.text = "Tournament: " + Matchlist[indexPath.row].TournamentName
+		cell.sport.text = "location: "+Matchlist[indexPath.row].location
+		cell.authorImageView.image = UIImage(named: "TM2")
+
 		
         // Configure the cell...
 //        if indexPath.row == 0 {

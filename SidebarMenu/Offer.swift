@@ -13,18 +13,29 @@ import Foundation
 
 class Offer{
 
-	var Match_date:String?
-	var	TeamA_name:String?
-	var TeamB_name:String?
-	var Tournament:String?
+	var dateOfOffer : String
+	var declinedReason : String
+	var dateOfMatch : String
+	var nameOfLocation : String
 	
-	init(Match_date:String,TeamA_name:String,TeamB_name:String,Tournament:String){
 	
-	self.Match_date=Match_date
-		self.TeamA_name=TeamA_name
-		self.TeamB_name=TeamB_name
-		self.Tournament=Tournament
-	
+	init(data: NSDictionary) {
+		dateOfOffer = data["dateOfOffer"] as! String
+		
+		if let null = data["declinedReason"] as? NSNull
+		{
+			declinedReason=""
+		}
+		else
+		{
+			declinedReason = data["declinedReason"] as! String
+		}
+		
+		dateOfMatch = data["dateOfMatch"] as! String
+		nameOfLocation = data["nameOfLocation"] as! String
+		
+		
+		
 	}
 
 

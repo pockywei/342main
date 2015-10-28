@@ -12,6 +12,10 @@ import Foundation
 
 
 class OfferTableViewController: UIViewController{
+	
+	
+	@IBOutlet weak var sb: UIImageView!
+	
 	@IBOutlet weak var pendingOffer: UIImageView!
 
 	@IBOutlet weak var menuButton: UIBarButtonItem!
@@ -20,6 +24,14 @@ class OfferTableViewController: UIViewController{
 	@IBOutlet weak var Accept: UIImageView!
 	override func viewDidLoad() {
 	super.viewDidLoad()
+		
+		let blurEffect =  UIBlurEffect(style: UIBlurEffectStyle.Light)
+		let bluredEffectView = UIVisualEffectView(effect: blurEffect)
+		bluredEffectView.frame = CGRectMake(-13, 0, 380, 700)
+		self.sb.addSubview(bluredEffectView)
+		//self.sb.sendSubviewToBack(bluredEffectView)
+		
+		
 		self.Accept.userInteractionEnabled = true
 		self.Decline.userInteractionEnabled = true
 		self.pendingOffer.userInteractionEnabled = true
