@@ -44,8 +44,15 @@ class Match_detailController:UIViewController,CLLocationManagerDelegate{
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-	
+		MapView.delegate = self
+		
+		let artwork = Artwork(title: "Your match location",
+			locationName: (match?.location)!,
+			discipline: "Sculpture",
+			coordinate: CLLocationCoordinate2D(latitude: Double((match?.lat)!)!, longitude: Double((match?.lon)!)!))
 
+		
+		MapView.addAnnotation(artwork)
 		
 		let blurEffect =  UIBlurEffect(style: UIBlurEffectStyle.Light)
 		let bluredEffectView = UIVisualEffectView(effect: blurEffect)
@@ -68,6 +75,7 @@ class Match_detailController:UIViewController,CLLocationManagerDelegate{
 			
 			print(annotation?.coordinate.longitude)
 			print(myLocation.coordinate.longitude)
+			print(myLocation.coordinate.latitude)
 			
 			MapView.addAnnotation(annotation!)
 			
