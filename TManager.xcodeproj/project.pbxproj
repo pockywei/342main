@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		B61064B01BE11B4700156B23 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61064AF1BE11B4700156B23 /* Artwork.swift */; };
 		B61064B21BE11EEE00156B23 /* VCMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61064B11BE11EEE00156B23 /* VCMapView.swift */; };
+		B61064B41BE2499100156B23 /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61064B31BE2499100156B23 /* WeatherCell.swift */; };
+		B61064B61BE24B2D00156B23 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61064B51BE24B2D00156B23 /* Weather.swift */; };
+		B61064B81BE27CA900156B23 /* weatherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61064B71BE27CA900156B23 /* weatherController.swift */; };
 		B64B58271BCFC01800C62894 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B58261BCFC01800C62894 /* Player.swift */; };
 		B64B58291BCFC08200C62894 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B58281BCFC08200C62894 /* HomeTableViewCell.swift */; };
 		B64B582B1BCFC08700C62894 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B582A1BCFC08700C62894 /* HomeTableViewController.swift */; };
@@ -56,6 +59,9 @@
 /* Begin PBXFileReference section */
 		B61064AF1BE11B4700156B23 /* Artwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
 		B61064B11BE11EEE00156B23 /* VCMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCMapView.swift; sourceTree = "<group>"; };
+		B61064B31BE2499100156B23 /* WeatherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
+		B61064B51BE24B2D00156B23 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		B61064B71BE27CA900156B23 /* weatherController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = weatherController.swift; sourceTree = "<group>"; };
 		B64B58261BCFC01800C62894 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = ../Player.swift; sourceTree = "<group>"; };
 		B64B58281BCFC08200C62894 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		B64B582A1BCFC08700C62894 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
@@ -161,9 +167,11 @@
 				B6A45BCB1BD922AE00D9ED39 /* DeclineOfferController.swift */,
 				B6A45BC91BD9227300D9ED39 /* AcceptOfferController.swift */,
 				B64B583E1BD0AA4E00C62894 /* OfferTableViewController.swift */,
+				B61064B71BE27CA900156B23 /* weatherController.swift */,
 				B64B58341BCFC0D700C62894 /* PhotoViewController.swift */,
 				B64B58281BCFC08200C62894 /* HomeTableViewCell.swift */,
 				B6A45BD31BD9F86000D9ED39 /* OfferCell.swift */,
+				B61064B31BE2499100156B23 /* WeatherCell.swift */,
 				B6A45BD71BDB4D5900D9ED39 /* pendingTableCell.swift */,
 				F47029F31A7F27DB00E30A3C /* Supporting Files */,
 				B6A45BCF1BD9ED3800D9ED39 /* DeclinedOfferDetail.swift */,
@@ -188,6 +196,7 @@
 				B6A45BDB1BDBAFDB00D9ED39 /* profile.swift */,
 				B61064AF1BE11B4700156B23 /* Artwork.swift */,
 				B61064B11BE11EEE00156B23 /* VCMapView.swift */,
+				B61064B51BE24B2D00156B23 /* Weather.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -318,12 +327,15 @@
 			files = (
 				B64B58561BD9076C00C62894 /* Match_detailController.swift in Sources */,
 				B64B58541BD8B4E900C62894 /* login_page.swift in Sources */,
+				B61064B41BE2499100156B23 /* WeatherCell.swift in Sources */,
 				B61064B21BE11EEE00156B23 /* VCMapView.swift in Sources */,
 				B61064B01BE11B4700156B23 /* Artwork.swift in Sources */,
 				B6A45BD01BD9ED3800D9ED39 /* DeclinedOfferDetail.swift in Sources */,
+				B61064B81BE27CA900156B23 /* weatherController.swift in Sources */,
 				B64B58411BD0FCF700C62894 /* TeamDetailController.swift in Sources */,
 				B64B58331BCFC0D300C62894 /* MenuController.swift in Sources */,
 				B66C7DBF1BBAD724000C542B /* SWRevealViewController.m in Sources */,
+				B61064B61BE24B2D00156B23 /* Weather.swift in Sources */,
 				B6A45BD81BDB4D5900D9ED39 /* pendingTableCell.swift in Sources */,
 				B64B583D1BD0A9F700C62894 /* Offer.swift in Sources */,
 				B64B582F1BCFC0C900C62894 /* TeamViewController.swift in Sources */,

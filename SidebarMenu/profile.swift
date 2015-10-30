@@ -11,7 +11,6 @@ import Foundation
 
 
 class profile{
-
 	var firstName : String
 	var UserName : String
 	var ffaNum : Int
@@ -32,24 +31,13 @@ class profile{
 		ffaNum = data["ffaNum"] as! Int
 		lastName = data["lastName"] as! String
 		phoneNum = data["phoneNum"] as! Int
-		
 		email = data["email"] as! String
 		country = data["country"] as! String
-		
 		postcode = data["postcode"] as! Int
 		street = data["street"] as! String
 		city = data["city"] as! String
 		state = data["state"] as! String
 		dob = data["dob"] as! String
 		photo = data["photoDir"] as! String
-		
-		
 	}
-
-
-
-
-
-
-
 }

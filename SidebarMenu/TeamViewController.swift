@@ -9,18 +9,18 @@
 import UIKit
 
 class TeamViewController: UITableViewController {
-    
+	
 	@IBOutlet weak var indecate: UIActivityIndicatorView!
 	@IBOutlet weak var menuButton: UIBarButtonItem!
 	let user = User.sharedInstance
 	
 	var team_list = [team]()
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	override func viewDidLoad() {
+		super.viewDidLoad()
 		
 		let blurEffect =  UIBlurEffect(style: UIBlurEffectStyle.Light)
 		let bluredEffectView = UIVisualEffectView(effect: blurEffect)
-		bluredEffectView.frame = CGRectMake(-13, 0, 380, 700)
+		bluredEffectView.frame = CGRectMake(-13, 0, 460, 800)
 		self.view.addSubview(bluredEffectView)
 		self.view.sendSubviewToBack(bluredEffectView)
 		
@@ -34,11 +34,11 @@ class TeamViewController: UITableViewController {
 			menuButton.action = "revealToggle:"
 			self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
 		}
-        // Do any additional setup after loading the view.
+		// Do any additional setup after loading the view.
 		getRemoteData()
 		
-    }
-
+	}
+	
 	func getRemoteData() {
 		let url = NSURL(string: "http://csci342.azurewebsites.net/api/TeamApi/" + user.userId)
 		let session = NSURLSession.sharedSession()
@@ -62,7 +62,7 @@ class TeamViewController: UITableViewController {
 		}
 		task.resume()
 	}
-
+	
 	
 	func initialTableArray(data : NSString) {
 		var parseError: NSError?
@@ -83,8 +83,32 @@ class TeamViewController: UITableViewController {
 						print(team_list[team_list.count-1])
 					}
 				}
+				
 			}
 		}
+		else{
+			var tField: UITextField!
+			
+			indecate.stopAnimating()
+			
+			indecate.hidden=true
+			
+			func handleCancel(alertView: UIAlertAction!)
+			{
+				print("Cancelled !!")
+			}
+			var alert = UIAlertController(title: "No teams you are belong to", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+			
+			
+			alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler:handleCancel))
+			self.presentViewController(alert, animated: true, completion: {
+				print("completion block")
+			})
+			
+			print("no data")
+		}
+		
+		
 		refershTable()
 	}
 	
@@ -96,17 +120,17 @@ class TeamViewController: UITableViewController {
 			return
 		})
 	}
-
-
 	
 	
 	
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
+	
+	
+	override func didReceiveMemoryWarning() {
+		super.didReceiveMemoryWarning()
+		// Dispose of any resources that can be recreated.
+	}
+	
+	
 	
 	override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
 		// Return the number of sections.
@@ -116,10 +140,10 @@ class TeamViewController: UITableViewController {
 	override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return team_list.count
 	}
-
+	
 	
 	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) 
+		let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
 		cell.contentView.backgroundColor = UIColor.clearColor()
 		cell.backgroundColor = UIColor.clearColor();
 		
@@ -133,10 +157,10 @@ class TeamViewController: UITableViewController {
 		return cell
 	}
 	
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+	// MARK: - Navigation
+	
+	// In a storyboard-based application, you will often want to do a little preparation before navigation
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		print("Show_team_detail")
 		if segue.identifier == "Show_team_detail" {
 			print("Show_team_detail")
@@ -146,17 +170,17 @@ class TeamViewController: UITableViewController {
 			if let selectedMealCell = sender as? UITableViewCell {
 				let indexPath = tableView.indexPathForCell(selectedMealCell)!
 				//if(searchActive){
-					let selectedMeal = team_list[indexPath.row]
-					teamDetailViewController.Team = selectedMeal
+				let selectedMeal = team_list[indexPath.row]
+				teamDetailViewController.Team = selectedMeal
 				
-					
+				
 				//}
-//				else{
-//					let selectedMeal = clipping[indexPath.row]
-//					mealDetailViewController.clip = selectedMeal
-//					mealDetailViewController.coll_detail = coll
-//					
-//				}
+				//				else{
+				//					let selectedMeal = clipping[indexPath.row]
+				//					mealDetailViewController.clip = selectedMeal
+				//					mealDetailViewController.coll_detail = coll
+				//
+				//				}
 				
 				
 				
@@ -166,9 +190,9 @@ class TeamViewController: UITableViewController {
 			
 			
 		}
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
+		// Get the new view controller using segue.destinationViewController.
+		// Pass the selected object to the new view controller.
+	}
 	
-
+	
 }

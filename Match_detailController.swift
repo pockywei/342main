@@ -13,6 +13,7 @@ import AddressBook
 
 class Match_detailController:UIViewController,CLLocationManagerDelegate{
 
+	@IBOutlet weak var Show_weather: UIButton!
 	@IBOutlet weak var transpancy: UIImageView!
 	
 	let locationManager = CLLocationManager()
@@ -44,6 +45,11 @@ class Match_detailController:UIViewController,CLLocationManagerDelegate{
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
+		Show_weather.backgroundColor = UIColor.clearColor()
+		Show_weather.layer.cornerRadius = 5
+		Show_weather.layer.borderWidth = 1
+		Show_weather.layer.borderColor = UIColor.whiteColor().CGColor
+		
 		MapView.delegate = self
 		
 		let artwork = Artwork(title: "Your match location",
@@ -56,7 +62,7 @@ class Match_detailController:UIViewController,CLLocationManagerDelegate{
 		
 		let blurEffect =  UIBlurEffect(style: UIBlurEffectStyle.Light)
 		let bluredEffectView = UIVisualEffectView(effect: blurEffect)
-		bluredEffectView.frame = CGRectMake(-13, 140, 380, 380)
+		bluredEffectView.frame = CGRectMake(-13, 140, 450, 380)
 		self.transpancy.addSubview(bluredEffectView)
 		
 		if let matchdetail = match{
@@ -136,6 +142,16 @@ class Match_detailController:UIViewController,CLLocationManagerDelegate{
 		
 	}
 
+	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		let mealDetailViewController = segue.destinationViewController as! UINavigationController
+		let weatherControllerShow = mealDetailViewController.topViewController as! weatherController
+
+		//let weatherControllerShow = segue.destinationViewController as! weatherController
+		let Coordinte = myLocation.coordinate;
+		weatherControllerShow.latitude = Coordinte.latitude.description
+		weatherControllerShow.longitude = Coordinte.longitude.description
+	}
 	
 
 
