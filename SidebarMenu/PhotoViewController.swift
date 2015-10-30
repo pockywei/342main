@@ -107,7 +107,9 @@ class PhotoViewController: UIViewController {
 								head_pic.contentMode = UIViewContentMode.ScaleAspectFit
 								
 								head_pic.image = UIImage(data: data)
-							}
+                                head_pic.layer.cornerRadius=head_pic.frame.size.height*2/3;
+                                head_pic.layer.masksToBounds=true;
+                               							}
 						}
 
 						let index=me.dob.startIndex.advancedBy(10)

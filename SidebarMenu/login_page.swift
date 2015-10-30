@@ -34,6 +34,7 @@ class loing_page:UIViewController,UITextFieldDelegate{
 		let bluredEffectView = UIVisualEffectView(effect: blurEffect)
 		bluredEffectView.frame = CGRectMake(-13, 0, 460, 800)
 		self.transpancy.addSubview(bluredEffectView)
+        self.transpancy.sendSubviewToBack(bluredEffectView)
 		
 	}
 	
