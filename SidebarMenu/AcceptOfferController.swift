@@ -14,6 +14,7 @@ import Foundation
 class AcceptOfferController:UITableViewController{
 	let user = User.sharedInstance
 	
+	@IBOutlet weak var indecate: UIActivityIndicatorView!
 	
 	
 	@IBAction func back_button(sender: AnyObject) {
@@ -35,7 +36,8 @@ class AcceptOfferController:UITableViewController{
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
+		indecate.hidden=false
+		indecate.startAnimating()
 		let blurEffect =  UIBlurEffect(style: UIBlurEffectStyle.Light)
 		let bluredEffectView = UIVisualEffectView(effect: blurEffect)
 		bluredEffectView.frame = CGRectMake(-13, 0, 460, 800)
@@ -92,6 +94,7 @@ class AcceptOfferController:UITableViewController{
 					if let dataBlock = list[i] as? NSDictionary {
 						offerlist.append(Offer(data: dataBlock))
 						print(offerlist[offerlist.count-1])
+						
 					}
 				}
 			}
@@ -101,6 +104,8 @@ class AcceptOfferController:UITableViewController{
 	
 	func refershTable() {
 		dispatch_async(dispatch_get_main_queue(), {
+			self.indecate.stopAnimating()
+			self.indecate.hidden=true
 			self.tableView.reloadData()
 			return
 		})
