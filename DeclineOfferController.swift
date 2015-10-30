@@ -11,10 +11,12 @@ import Foundation
 
 
 class DeclineOfferController: UITableViewController {
+
 	
 	
 	@IBOutlet weak var indecate: UIActivityIndicatorView!
 	
+
 	let user = User.sharedInstance
 	@IBAction func back_button(sender: AnyObject) {
 		let isPresentingInAddMealMode = presentingViewController is UINavigationController
@@ -33,7 +35,9 @@ class DeclineOfferController: UITableViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+
 		indecate.startAnimating()
+
 		let blurEffect =  UIBlurEffect(style: UIBlurEffectStyle.Light)
 		let bluredEffectView = UIVisualEffectView(effect: blurEffect)
 		bluredEffectView.frame = CGRectMake(-13, 0,460, 800)
@@ -96,8 +100,10 @@ class DeclineOfferController: UITableViewController {
 	
 	func refershTable() {
 		dispatch_async(dispatch_get_main_queue(), {
+
 			self.indecate.stopAnimating()
 			self.indecate.hidden=true
+
 			self.tableView.reloadData()
 			return
 		})
@@ -121,8 +127,13 @@ class DeclineOfferController: UITableViewController {
 		
 		
 		
+
 		cell.Tournament.text = "The location: "+offer_cell.nameOfLocation
 		cell.Offer_date.text = "The date of the offer: "+offer_cell.dateOfOffer
+
+		
+		
+
 		
 		cell.Tournament.textColor = UIColor.whiteColor()
 		cell.Offer_date.textColor = UIColor.whiteColor()

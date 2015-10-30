@@ -16,7 +16,11 @@ class pendingTableCell:UITableViewCell{
 	@IBOutlet weak var OfferDate: UILabel!
 	@IBOutlet weak var Accept_button: UIImageView!
 	
+<<<<<<< HEAD
 	var offerid : Int?
+=======
+
+>>>>>>> origin/zhaokk
 
 	override func awakeFromNib() {
 		super.awakeFromNib()

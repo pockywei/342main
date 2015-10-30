@@ -17,7 +17,11 @@ class Offer{
 	var declinedReason : String
 	var dateOfMatch : String
 	var nameOfLocation : String
+<<<<<<< HEAD
 	var offerId : Int
+=======
+	
+>>>>>>> origin/zhaokk
 	
 	init(data: NSDictionary) {
 		dateOfOffer = data["dateOfOffer"] as! String
@@ -33,7 +37,11 @@ class Offer{
 		
 		dateOfMatch = data["dateOfMatch"] as! String
 		nameOfLocation = data["nameOfLocation"] as! String
+<<<<<<< HEAD
 		offerId = data["offerId"] as! Int
+=======
+		
+>>>>>>> origin/zhaokk
 		
 		
 	}

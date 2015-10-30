@@ -14,8 +14,9 @@ import Foundation
 class AcceptOfferController:UITableViewController{
 	let user = User.sharedInstance
 	
+
 	@IBOutlet weak var indecate: UIActivityIndicatorView!
-	
+
 	
 	@IBAction func back_button(sender: AnyObject) {
 		let isPresentingInAddMealMode = presentingViewController is UINavigationController
@@ -48,6 +49,7 @@ class AcceptOfferController:UITableViewController{
 		self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ceystalhorizon")!)
 		getRemoteData()
 		
+
 		
 		
 	}
@@ -94,7 +96,7 @@ class AcceptOfferController:UITableViewController{
 					if let dataBlock = list[i] as? NSDictionary {
 						offerlist.append(Offer(data: dataBlock))
 						print(offerlist[offerlist.count-1])
-						
+
 					}
 				}
 			}
@@ -104,8 +106,10 @@ class AcceptOfferController:UITableViewController{
 	
 	func refershTable() {
 		dispatch_async(dispatch_get_main_queue(), {
+
 			self.indecate.stopAnimating()
 			self.indecate.hidden=true
+
 			self.tableView.reloadData()
 			return
 		})

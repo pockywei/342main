@@ -13,7 +13,10 @@ import Foundation
 class WaittingOfferController:UITableViewController {
 	let user = User.sharedInstance
 	
+<<<<<<< HEAD
 	@IBOutlet weak var indecate: UIActivityIndicatorView!
+=======
+>>>>>>> origin/zhaokk
 	@IBAction func back_button(sender: AnyObject) {
 		let isPresentingInAddMealMode = presentingViewController is UINavigationController
 		print("1")
@@ -32,7 +35,10 @@ class WaittingOfferController:UITableViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+<<<<<<< HEAD
 		indecate.startAnimating()
+=======
+>>>>>>> origin/zhaokk
 		let blurEffect =  UIBlurEffect(style: UIBlurEffectStyle.Light)
 		let bluredEffectView = UIVisualEffectView(effect: blurEffect)
 		bluredEffectView.frame = CGRectMake(-13, 0, 460, 800)
@@ -98,17 +104,28 @@ class WaittingOfferController:UITableViewController {
 
 	func refershTable() {
 		dispatch_async(dispatch_get_main_queue(), {
+<<<<<<< HEAD
 			self.indecate.stopAnimating()
 			self.indecate.hidden=true
+=======
+>>>>>>> origin/zhaokk
 			self.tableView.reloadData()
 			return
 		})
 	}
 
 	
+<<<<<<< HEAD
 	func post2PHP(offid:Int) {
 		let url = NSURL(string: "http://csci342.azurewebsites.net/api/PendingOffers/"+user.userId+"?offerId="+String(offid)+"&flag=1")
 		let session = NSURLSession.sharedSession()
+=======
+	func post2PHP(message_of_offer:String) {
+		let myUrl = NSURL(string: "http://")
+		let request = NSMutableURLRequest(URL:myUrl!);
+		request.HTTPMethod = "POST";
+		// Compose a query string
+>>>>>>> origin/zhaokk
 		
 		let request = NSMutableURLRequest(URL: url!)
 		
@@ -201,6 +218,61 @@ class WaittingOfferController:UITableViewController {
 		
 		let offer_cell = offerlist[indexPath.row]
 		cell.offerid = offer_cell.offerId
+		cell.Accept_button.userInteractionEnabled = true
+		
+		let tapGesture_pending = UITapGestureRecognizer(target: self, action: Selector("handleTap_pendingOffer_to_accept:"))
+
+		cell.Accept_button.addGestureRecognizer(tapGesture_pending)
+		
+		cell.Accept_button.image = UIImage(named:"accept")
+		cell.OfferDate.text = offer_cell.dateOfOffer
+		
+		cell.OfferDate.textColor = UIColor.whiteColor()
+		
+		
+		
+		
+		//		cell.Tournament.text = offer_cell.Tournament
+		//
+		//		cell.Offer_date.text = offer_cell.Match_date
+		
+		
+		return cell
+		
+		
+		
+	}
+
+	
+	func handleTap_pendingOffer_to_accept(sender: UITapGestureRecognizer){
+	print("hello")
+		let tapLocation = sender.locationInView(self.tableView)
+		let indexPath = self.tableView.indexPathForRowAtPoint(tapLocation)
+		let cell = self.tableView.cellForRowAtIndexPath(indexPath!)
+		
+		cell?.imageView?.image = UIImage(named: "accepted")
+		
+	}
+	
+	override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+		// Return the number of sections.
+		return 1
+	}
+	
+	
+	
+	override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return offerlist.count
+	}
+	
+	
+	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+		print("panding_cell")
+		let cell = tableView.dequeueReusableCellWithIdentifier("pending_cell", forIndexPath: indexPath) as! pendingTableCell
+		
+		
+		let offer_cell = offerlist[indexPath.row]
+		
 		cell.Accept_button.userInteractionEnabled = true
 		
 		let tapGesture_pending = UITapGestureRecognizer(target: self, action: Selector("handleTap_pendingOffer_to_accept:"))

@@ -41,7 +41,11 @@ class TeamDetailController:UIViewController{
 	
 		let blurEffect =  UIBlurEffect(style: UIBlurEffectStyle.Light)
 		let bluredEffectView = UIVisualEffectView(effect: blurEffect)
+<<<<<<< HEAD
 		bluredEffectView.frame = CGRectMake(-13, 0, 460, 800)
+=======
+		bluredEffectView.frame = CGRectMake(-13, 0, 380, 700)
+>>>>>>> origin/zhaokk
 		self.sb.addSubview(bluredEffectView)
 
 		

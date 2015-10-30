@@ -351,12 +351,21 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ceystalhorizon" translatesAutoresizingMaskIntoConstraints="NO" id="T5B-eJ-XbK">
                                 <rect key="frame" x="-9" y="64" width="638" height="583"/>
+<<<<<<< HEAD
                                 <animations/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GBi-4X-Op2">
                                 <rect key="frame" x="13" y="84" width="579" height="508"/>
                                 <animations/>
                             </imageView>
+=======
+                                <animations/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GBi-4X-Op2">
+                                <rect key="frame" x="13" y="84" width="579" height="508"/>
+                                <animations/>
+                            </imageView>
+>>>>>>> origin/zhaokk
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="GMk-dL-ox7">
                                 <rect key="frame" x="0.0" y="64" width="455" height="224"/>
                                 <animations/>
@@ -377,6 +386,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raF-dS-J7q">
                                 <rect key="frame" x="20" y="414" width="370" height="21"/>
+<<<<<<< HEAD
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Q0a-Nn-lbU"/>
@@ -406,6 +416,37 @@
                                 <rect key="frame" x="20" y="365" width="362" height="21"/>
                                 <animations/>
                                 <constraints>
+=======
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Q0a-Nn-lbU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMa-Sn-4sE">
+                                <rect key="frame" x="20" y="464" width="362" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Cm1-LT-Urr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9r-Wq-wG8">
+                                <rect key="frame" x="20" y="510" width="493" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSq-en-wjQ">
+                                <rect key="frame" x="20" y="365" width="362" height="21"/>
+                                <animations/>
+                                <constraints>
+>>>>>>> origin/zhaokk
                                     <constraint firstAttribute="height" constant="21" id="0V3-8U-7Gc"/>
                                     <constraint firstAttribute="width" constant="362" id="SyR-iT-t4a"/>
                                 </constraints>
@@ -467,11 +508,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yer-UG-kcc">
+<<<<<<< HEAD
                                 <rect key="frame" x="19" y="546" width="140" height="30"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="2vX-qu-xqO"/>
                                 </constraints>
+=======
+                                <rect key="frame" x="13" y="546" width="127" height="30"/>
+                                <animations/>
+>>>>>>> origin/zhaokk
                                 <state key="normal" title="Show weather info">
                                     <color key="titleColor" red="0.98866880961777048" green="0.99692335746164384" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -492,8 +538,13 @@
                             <constraint firstItem="HFE-Fm-MbF" firstAttribute="top" secondItem="raF-dS-J7q" secondAttribute="bottom" constant="8" id="Epn-hx-K7h"/>
                             <constraint firstItem="GMk-dL-ox7" firstAttribute="top" secondItem="xVK-wc-Vr6" secondAttribute="bottom" id="HW4-1G-iC1"/>
                             <constraint firstItem="T5B-eJ-XbK" firstAttribute="leading" secondItem="Wn3-qh-ijj" secondAttribute="leadingMargin" constant="-29" id="HnF-0t-6AV"/>
+<<<<<<< HEAD
                             <constraint firstItem="yer-UG-kcc" firstAttribute="top" secondItem="y9r-Wq-wG8" secondAttribute="bottom" constant="15" id="IbY-tL-QV9"/>
                             <constraint firstItem="MMa-Sn-4sE" firstAttribute="top" secondItem="HFE-Fm-MbF" secondAttribute="bottom" id="JgX-JP-DFj"/>
+=======
+                            <constraint firstItem="MMa-Sn-4sE" firstAttribute="top" secondItem="HFE-Fm-MbF" secondAttribute="bottom" id="JgX-JP-DFj"/>
+                            <constraint firstItem="A1t-XI-OUr" firstAttribute="top" secondItem="yer-UG-kcc" secondAttribute="bottom" constant="24" id="K66-tj-sfd"/>
+>>>>>>> origin/zhaokk
                             <constraint firstItem="MMa-Sn-4sE" firstAttribute="leading" secondItem="Awl-A2-Bz7" secondAttribute="leading" id="Kot-Bx-iyI"/>
                             <constraint firstItem="GMk-dL-ox7" firstAttribute="leading" secondItem="Wn3-qh-ijj" secondAttribute="leading" id="KyW-dX-KOG"/>
                             <constraint firstItem="MdQ-Iv-NEn" firstAttribute="top" secondItem="GMk-dL-ox7" secondAttribute="bottom" constant="8" id="L3A-Ih-tYE"/>
@@ -503,7 +554,10 @@
                             <constraint firstItem="GMk-dL-ox7" firstAttribute="top" secondItem="T5B-eJ-XbK" secondAttribute="top" id="SD1-oO-cug"/>
                             <constraint firstItem="eSq-en-wjQ" firstAttribute="leading" secondItem="SgO-XS-aAf" secondAttribute="leading" id="SQe-F1-cg9"/>
                             <constraint firstItem="A1t-XI-OUr" firstAttribute="top" secondItem="GBi-4X-Op2" secondAttribute="bottom" constant="8" symbolic="YES" id="SpH-Gi-cDH"/>
+<<<<<<< HEAD
                             <constraint firstItem="yer-UG-kcc" firstAttribute="leading" secondItem="Wn3-qh-ijj" secondAttribute="leadingMargin" constant="-1" id="Uee-rk-szO"/>
+=======
+>>>>>>> origin/zhaokk
                             <constraint firstAttribute="trailingMargin" secondItem="T5B-eJ-XbK" secondAttribute="trailing" constant="-49" id="Ueg-Mf-lz8"/>
                             <constraint firstItem="Awl-A2-Bz7" firstAttribute="top" secondItem="MMa-Sn-4sE" secondAttribute="bottom" constant="6" id="Wqe-OZ-Vg9"/>
                             <constraint firstItem="6n2-ym-Lf1" firstAttribute="top" secondItem="Rhe-F6-H4X" secondAttribute="bottom" constant="10" id="XJ5-NF-3Ch"/>
@@ -517,6 +571,10 @@
                             <constraint firstItem="Rhe-F6-H4X" firstAttribute="centerY" secondItem="GBi-4X-Op2" secondAttribute="centerY" constant="-13.5" id="hL2-9h-ScQ"/>
                             <constraint firstItem="eSq-en-wjQ" firstAttribute="top" secondItem="6n2-ym-Lf1" secondAttribute="bottom" constant="-1" id="hS4-Ln-DmT"/>
                             <constraint firstItem="y9r-Wq-wG8" firstAttribute="trailing" secondItem="raF-dS-J7q" secondAttribute="trailing" constant="123" id="igQ-MZ-nE7"/>
+<<<<<<< HEAD
+=======
+                            <constraint firstItem="yer-UG-kcc" firstAttribute="leading" secondItem="Wn3-qh-ijj" secondAttribute="leadingMargin" constant="-7" id="kpp-Os-abM"/>
+>>>>>>> origin/zhaokk
                             <constraint firstItem="HFE-Fm-MbF" firstAttribute="leading" secondItem="MMa-Sn-4sE" secondAttribute="leading" id="pPj-OG-FnD"/>
                             <constraint firstItem="raF-dS-J7q" firstAttribute="centerX" secondItem="Wn3-qh-ijj" secondAttribute="centerX" constant="-95" id="vhu-DR-Dd6"/>
                             <constraint firstItem="MdQ-Iv-NEn" firstAttribute="trailing" secondItem="6n2-ym-Lf1" secondAttribute="trailing" id="vku-NY-TL7"/>
@@ -546,7 +604,11 @@
             </objects>
             <point key="canvasLocation" x="2811" y="-1782"/>
         </scene>
+<<<<<<< HEAD
         <!--Next 10 days weather-->
+=======
+        <!--Title-->
+>>>>>>> origin/zhaokk
         <scene sceneID="Hi4-Wg-RHj">
             <objects>
                 <tableViewController id="uLp-dR-O9E" customClass="weatherController" customModule="TManager" customModuleProvider="target" sceneMemberID="viewController">
@@ -607,7 +669,11 @@
                             <outlet property="delegate" destination="uLp-dR-O9E" id="moX-Zy-qpk"/>
                         </connections>
                     </tableView>
+<<<<<<< HEAD
                     <navigationItem key="navigationItem" title="Next 10 days weather" id="Sh4-Ph-33v">
+=======
+                    <navigationItem key="navigationItem" title="Title" id="Sh4-Ph-33v">
+>>>>>>> origin/zhaokk
                         <barButtonItem key="leftBarButtonItem" title="&lt;back" id="XNP-yf-uf4">
                             <connections>
                                 <action selector="back_button:" destination="uLp-dR-O9E" id="neH-MY-8kE"/>
@@ -1455,7 +1521,11 @@
             </objects>
             <point key="canvasLocation" x="3436" y="-27"/>
         </scene>
+<<<<<<< HEAD
         <!--Offer detail-->
+=======
+        <!--Title-->
+>>>>>>> origin/zhaokk
         <scene sceneID="cwy-mR-hzX">
             <objects>
                 <viewController id="exg-bJ-X0k" customClass="PendingOfferDetail" customModule="TManager" customModuleProvider="target" sceneMemberID="viewController">
@@ -1530,7 +1600,11 @@
                             <constraint firstAttribute="trailing" secondItem="pxz-UY-qQT" secondAttribute="trailing" id="laK-2g-Tn8"/>
                         </constraints>
                     </view>
+<<<<<<< HEAD
                     <navigationItem key="navigationItem" title="Offer detail" id="IZE-l5-Taj">
+=======
+                    <navigationItem key="navigationItem" title="Title" id="IZE-l5-Taj">
+>>>>>>> origin/zhaokk
                         <barButtonItem key="leftBarButtonItem" title="&lt; back" id="cjA-72-IQc">
                             <connections>
                                 <action selector="back_button:" destination="exg-bJ-X0k" id="ja0-qf-Kki"/>
@@ -1679,11 +1753,34 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBG-dy-2XI">
                                 <rect key="frame" x="65" y="305" width="188" height="21"/>
+<<<<<<< HEAD
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TE1-ql-Pv9">
+                                <rect key="frame" x="65" y="377" width="188" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwO-6m-Uzk">
+                                <rect key="frame" x="65" y="232" width="188" height="21"/>
+=======
+>>>>>>> origin/zhaokk
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+<<<<<<< HEAD
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Match date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sg5-rV-nVY">
+                                <rect key="frame" x="65" y="213" width="87" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+=======
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TE1-ql-Pv9">
                                 <rect key="frame" x="65" y="377" width="188" height="21"/>
                                 <animations/>
@@ -1702,6 +1799,7 @@
                                 <rect key="frame" x="65" y="213" width="87" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+>>>>>>> origin/zhaokk
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1741,6 +1839,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RCr-BN-EFD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3907" y="663"/>
+<<<<<<< HEAD
         </scene>
         <!--Item 2-->
         <scene sceneID="cQN-tg-89Y">
@@ -1781,6 +1880,8 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s5p-xd-vo9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5569" y="333"/>
+=======
+>>>>>>> origin/zhaokk
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ysh-9m-BO8">
@@ -1824,11 +1925,49 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCN-iC-P0A">
                                 <rect key="frame" x="104" y="311" width="238" height="21"/>
+<<<<<<< HEAD
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FmP-F7-rfw">
+                                <rect key="frame" x="104" y="380" width="434" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SaP-Xe-nML">
+                                <rect key="frame" x="104" y="253" width="350" height="21"/>
+=======
+>>>>>>> origin/zhaokk
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+<<<<<<< HEAD
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Offer date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jP3-rC-HbN">
+                                <rect key="frame" x="104" y="294" width="238" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITJ-0o-4Sb">
+                                <rect key="frame" x="104" y="360" width="238" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Match date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6R9-Ok-HGK">
+                                <rect key="frame" x="104" y="236" width="238" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+=======
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FmP-F7-rfw">
                                 <rect key="frame" x="104" y="380" width="434" height="21"/>
                                 <animations/>
@@ -1862,6 +2001,7 @@
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+>>>>>>> origin/zhaokk
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
