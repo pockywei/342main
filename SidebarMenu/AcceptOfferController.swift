@@ -36,6 +36,7 @@ class AcceptOfferController:UITableViewController{
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		indecate.hidden=false
 		indecate.startAnimating()
 		let blurEffect =  UIBlurEffect(style: UIBlurEffectStyle.Light)
 		let bluredEffectView = UIVisualEffectView(effect: blurEffect)
@@ -93,6 +94,7 @@ class AcceptOfferController:UITableViewController{
 					if let dataBlock = list[i] as? NSDictionary {
 						offerlist.append(Offer(data: dataBlock))
 						print(offerlist[offerlist.count-1])
+						
 					}
 				}
 			}

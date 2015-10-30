@@ -1371,7 +1371,7 @@
             </objects>
             <point key="canvasLocation" x="1123" y="529"/>
         </scene>
-        <!--Title-->
+        <!--Pending offer-->
         <scene sceneID="h2k-vp-OC8">
             <objects>
                 <tableViewController id="WU4-Ow-9hM" customClass="WaittingOfferController" customModule="TManager" customModuleProvider="target" sceneMemberID="viewController">
@@ -1423,7 +1423,7 @@
                             <outlet property="delegate" destination="WU4-Ow-9hM" id="0at-JM-pK0"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="dQ9-a1-SkB">
+                    <navigationItem key="navigationItem" title="Pending offer" id="dQ9-a1-SkB">
                         <barButtonItem key="leftBarButtonItem" title="&lt;back" id="fCc-0Z-wlT">
                             <connections>
                                 <action selector="back_button:" destination="WU4-Ow-9hM" id="FyU-RP-OMw"/>
@@ -1455,7 +1455,7 @@
             </objects>
             <point key="canvasLocation" x="3436" y="-27"/>
         </scene>
-        <!--Title-->
+        <!--Offer detail-->
         <scene sceneID="cwy-mR-hzX">
             <objects>
                 <viewController id="exg-bJ-X0k" customClass="PendingOfferDetail" customModule="TManager" customModuleProvider="target" sceneMemberID="viewController">
@@ -1530,7 +1530,7 @@
                             <constraint firstAttribute="trailing" secondItem="pxz-UY-qQT" secondAttribute="trailing" id="laK-2g-Tn8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="IZE-l5-Taj">
+                    <navigationItem key="navigationItem" title="Offer detail" id="IZE-l5-Taj">
                         <barButtonItem key="leftBarButtonItem" title="&lt; back" id="cjA-72-IQc">
                             <connections>
                                 <action selector="back_button:" destination="exg-bJ-X0k" id="ja0-qf-Kki"/>
@@ -1654,7 +1654,7 @@
             </objects>
             <point key="canvasLocation" x="3255" y="671"/>
         </scene>
-        <!--Title-->
+        <!--Declined offer detail-->
         <scene sceneID="W6q-T6-Ylh">
             <objects>
                 <viewController id="VRD-Cx-u3J" customClass="DeclinedOfferDetail" customModule="TManager" customModuleProvider="target" sceneMemberID="viewController">
@@ -1723,7 +1723,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="FF8-yR-1Xu">
+                    <navigationItem key="navigationItem" title="Declined offer detail" id="FF8-yR-1Xu">
                         <barButtonItem key="leftBarButtonItem" title="&lt; back" id="0Ux-IU-1fc">
                             <connections>
                                 <action selector="back_button:" destination="VRD-Cx-u3J" id="PKX-x4-9Gm"/>
@@ -1742,6 +1742,46 @@
             </objects>
             <point key="canvasLocation" x="3907" y="663"/>
         </scene>
+        <!--Item 2-->
+        <scene sceneID="cQN-tg-89Y">
+            <objects>
+                <viewController id="ju1-DU-kUE" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ark-Up-Ibw"/>
+                        <viewControllerLayoutGuide type="bottom" id="tjn-TT-qEx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nxt-BB-hiw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="drB-li-T84"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A4R-oh-Wtz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5569" y="993"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="fj5-uE-XKY">
+            <objects>
+                <viewController id="T4k-OA-8eZ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wZg-e5-wlQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="tlS-7h-8lQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VGD-X1-Ykc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="9ab-49-bV5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s5p-xd-vo9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5569" y="333"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ysh-9m-BO8">
             <objects>
@@ -1759,7 +1799,7 @@
             </objects>
             <point key="canvasLocation" x="3255" y="1327"/>
         </scene>
-        <!--Title-->
+        <!--Accepted offer-->
         <scene sceneID="ZIU-8o-InM">
             <objects>
                 <viewController id="gfj-ew-MFp" customClass="AcceptedOfferDetail" customModule="TManager" customModuleProvider="target" sceneMemberID="viewController">
@@ -1828,7 +1868,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="xv2-xU-dEA">
+                    <navigationItem key="navigationItem" title="Accepted offer" id="xv2-xU-dEA">
                         <barButtonItem key="leftBarButtonItem" title="&lt; back" id="44m-RY-DGb">
                             <connections>
                                 <action selector="back_button:" destination="gfj-ew-MFp" id="7uY-Pp-myH"/>
@@ -1864,7 +1904,7 @@
             </objects>
             <point key="canvasLocation" x="1875" y="1315"/>
         </scene>
-        <!--Title-->
+        <!--Declined offer-->
         <scene sceneID="Jgw-6b-bDy">
             <objects>
                 <tableViewController id="1Kr-zJ-DuY" customClass="DeclineOfferController" customModule="TManager" customModuleProvider="target" sceneMemberID="viewController">
@@ -1906,6 +1946,7 @@
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="Offer_date" destination="USJ-F9-Cit" id="wtI-Nn-RiX"/>
                                     <outlet property="Tournament" destination="OKx-c8-qm3" id="DtF-Wi-ymK"/>
@@ -1918,7 +1959,7 @@
                             <outlet property="delegate" destination="1Kr-zJ-DuY" id="BVj-C6-Iov"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="Ktb-XI-ofl">
+                    <navigationItem key="navigationItem" title="Declined offer" id="Ktb-XI-ofl">
                         <barButtonItem key="leftBarButtonItem" title="&lt;back" id="tTf-fz-dN0">
                             <connections>
                                 <action selector="back_button:" destination="1Kr-zJ-DuY" id="xax-uY-tbd"/>

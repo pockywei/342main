@@ -121,11 +121,11 @@ class DeclineOfferController: UITableViewController {
 		
 		
 		
-		cell.Tournament.text = offer_cell.dateOfOffer
-		cell.Offer_date.text = offer_cell.nameOfLocation
+		cell.Tournament.text = "The location: "+offer_cell.nameOfLocation
+		cell.Offer_date.text = "The date of the offer: "+offer_cell.dateOfOffer
 		
-		
-		
+		cell.Tournament.textColor = UIColor.whiteColor()
+		cell.Offer_date.textColor = UIColor.whiteColor()
 		
 //		cell.Tournament.text = offer_cell.Tournament
 //		

@@ -106,47 +106,31 @@ class WaittingOfferController:UITableViewController {
 	}
 
 	
-	func post2PHP(message_of_offer:String) {
-		let myUrl = NSURL(string: "http://")
-		let request = NSMutableURLRequest(URL:myUrl!);
-		request.HTTPMethod = "POST";
-		// Compose a query string
+	func post2PHP(offid:Int) {
+		let url = NSURL(string: "http://csci342.azurewebsites.net/api/PendingOffers/"+user.userId+"?offerId="+String(offid)+"&flag=1")
+		let session = NSURLSession.sharedSession()
 		
-		if(message_of_offer=="accept")
-		{
-			
-		}
-		else if(message_of_offer=="decline")
-		{
-			
-		}
+		let request = NSMutableURLRequest(URL: url!)
 		
-		
-		let postString = "&username=cw473";
-		
-		request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding);
-		
-		let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
-			data, response, error in
-			
-			if error != nil
-			{
-				print("error=\(error)")
+		let task = session.dataTaskWithRequest(request) {
+			(let data, let response, let error) in
+			guard let _:NSData = data, let _:NSURLResponse = response where error == nil else {
+				print("error")
 				return
 			}
 			
-			// You can print out response object
-			
-			// Print out response body
-			let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-			print("responseString = \(responseString)")
-			
-			//Let’s convert response sent from a server side script to a NSDictionary object:
-			
+			dispatch_async(dispatch_get_main_queue(), {
+				let json = NSString(data: data!, encoding: NSASCIIStringEncoding)
+				//self.initialTableArray(json!)
+				print("get it")
+				print(json)
+				return
+			})
 		}
-		
 		task.resume()
 	}
+	
+	
 	
 	func handleTap_pendingOffer_to_accept(sender: UITapGestureRecognizer){
 	print("hello")
@@ -154,8 +138,48 @@ class WaittingOfferController:UITableViewController {
 		let indexPath = self.tableView.indexPathForRowAtPoint(tapLocation)
 		let cell = self.tableView.cellForRowAtIndexPath(indexPath!)
 		
+		
+		let cell_pending = cell as! pendingTableCell
+		
+		print(cell_pending.offerid)
+		
+		post2PHP(cell_pending.offerid!)
 		cell?.imageView?.image = UIImage(named: "accepted")
 		
+		offerlist.removeAtIndex(indexPath!.row)
+		tableView.reloadData()
+		
+		
+	}
+	
+	func declinePost(offid:Int){
+	
+		
+			let url = NSURL(string: "http://csci342.azurewebsites.net/api/PendingOffers/"+user.userId+"?offerId="+String(offid)+"&flag=0")
+			let session = NSURLSession.sharedSession()
+			
+			let request = NSMutableURLRequest(URL: url!)
+			
+			let task = session.dataTaskWithRequest(request) {
+				(let data, let response, let error) in
+				guard let _:NSData = data, let _:NSURLResponse = response where error == nil else {
+					print("error")
+					return
+				}
+				
+				dispatch_async(dispatch_get_main_queue(), {
+					let json = NSString(data: data!, encoding: NSASCIIStringEncoding)
+					//self.initialTableArray(json!)
+					print("get it")
+					print(json)
+					return
+				})
+			}
+			task.resume()
+		
+	
+	
+	
 	}
 	
 	override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -176,7 +200,7 @@ class WaittingOfferController:UITableViewController {
 		
 		
 		let offer_cell = offerlist[indexPath.row]
-		
+		cell.offerid = offer_cell.offerId
 		cell.Accept_button.userInteractionEnabled = true
 		
 		let tapGesture_pending = UITapGestureRecognizer(target: self, action: Selector("handleTap_pendingOffer_to_accept:"))
@@ -209,7 +233,8 @@ class WaittingOfferController:UITableViewController {
 			//Do something with post
 			offerlist.removeAtIndex(indexPath.row)
 			
-			
+			let cell = tableView.dequeueReusableCellWithIdentifier("pending_cell", forIndexPath: indexPath) as! pendingTableCell
+			declinePost(cell.offerid!)
 			//tableView.reloadData()
 			tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
 		}
