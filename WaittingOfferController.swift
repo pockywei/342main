@@ -13,10 +13,9 @@ import Foundation
 class WaittingOfferController:UITableViewController {
 	let user = User.sharedInstance
 	
-<<<<<<< HEAD
+
 	@IBOutlet weak var indecate: UIActivityIndicatorView!
-=======
->>>>>>> origin/zhaokk
+
 	@IBAction func back_button(sender: AnyObject) {
 		let isPresentingInAddMealMode = presentingViewController is UINavigationController
 		print("1")
@@ -35,10 +34,9 @@ class WaittingOfferController:UITableViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-<<<<<<< HEAD
+
 		indecate.startAnimating()
-=======
->>>>>>> origin/zhaokk
+
 		let blurEffect =  UIBlurEffect(style: UIBlurEffectStyle.Light)
 		let bluredEffectView = UIVisualEffectView(effect: blurEffect)
 		bluredEffectView.frame = CGRectMake(-13, 0, 460, 800)
@@ -104,28 +102,21 @@ class WaittingOfferController:UITableViewController {
 
 	func refershTable() {
 		dispatch_async(dispatch_get_main_queue(), {
-<<<<<<< HEAD
+
 			self.indecate.stopAnimating()
 			self.indecate.hidden=true
-=======
->>>>>>> origin/zhaokk
+
 			self.tableView.reloadData()
 			return
 		})
 	}
 
 	
-<<<<<<< HEAD
+
 	func post2PHP(offid:Int) {
 		let url = NSURL(string: "http://csci342.azurewebsites.net/api/PendingOffers/"+user.userId+"?offerId="+String(offid)+"&flag=1")
 		let session = NSURLSession.sharedSession()
-=======
-	func post2PHP(message_of_offer:String) {
-		let myUrl = NSURL(string: "http://")
-		let request = NSMutableURLRequest(URL:myUrl!);
-		request.HTTPMethod = "POST";
-		// Compose a query string
->>>>>>> origin/zhaokk
+
 		
 		let request = NSMutableURLRequest(URL: url!)
 		
