@@ -11,7 +11,7 @@ import Foundation
 
 
 class DeclineOfferController: UITableViewController {
-	
+	let user = User.sharedInstance
 	@IBAction func back_button(sender: AnyObject) {
 		let isPresentingInAddMealMode = presentingViewController is UINavigationController
 		print("1")
@@ -25,37 +25,25 @@ class DeclineOfferController: UITableViewController {
 		}
 	}
 	
-	struct tableCellData {
-		var teamAId : Int
-		var teamBId : Int
-		var locationId : Int
-		
-		init(data: NSDictionary) {
-			teamAId = data["teamAId"] as! Int
-			teamBId = data["teamBId"] as! Int
-			locationId = data["locationId"] as! Int
-		}
-	}
-	
-	var records = [tableCellData]()
 	var offerlist = [Offer]()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		let offer = Offer(Match_date: "10/14/2015", TeamA_name: "Team A", TeamB_name: "Team B", Tournament: "NSW game")
+		let blurEffect =  UIBlurEffect(style: UIBlurEffectStyle.Light)
+		let bluredEffectView = UIVisualEffectView(effect: blurEffect)
+		bluredEffectView.frame = CGRectMake(-13, 0,460, 800)
+		self.view.addSubview(bluredEffectView)
+		self.view.sendSubviewToBack(bluredEffectView)
 		
-		offerlist.append(offer)
-		offerlist.append(offer)
-		offerlist.append(offer)
-		offerlist.append(offer)
-		
+		self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ceystalhorizon")!)
+		getRemoteData()
 	}
 
 	
 	
 	func getRemoteData() {
-		let url = NSURL(string: "http://342.azurewebsites.net/api/matches")
+		let url = NSURL(string: "http://csci342.azurewebsites.net/api/RejectedOffers/" + user.userId + "?userId=" + user.name)
 		let session = NSURLSession.sharedSession()
 		
 		let request = NSMutableURLRequest(URL: url!)
@@ -70,6 +58,7 @@ class DeclineOfferController: UITableViewController {
 			dispatch_async(dispatch_get_main_queue(), {
 				let json = NSString(data: data!, encoding: NSASCIIStringEncoding)
 				self.initialTableArray(json!)
+				print(json)
 				print("get it")
 				return
 			})
@@ -92,15 +81,22 @@ class DeclineOfferController: UITableViewController {
 			if let list = json as? NSArray {
 				for (var i = 0; i < list.count; i++) {
 					if let dataBlock = list[i] as? NSDictionary {
-						records.append(tableCellData(data: dataBlock))
-						print(records[records.count-1])
+						offerlist.append(Offer(data: dataBlock))
+						print(offerlist[offerlist.count-1])
 					}
 				}
 			}
 		}
-		//refershTable()
+		refershTable()
 	}
 	
+	func refershTable() {
+		dispatch_async(dispatch_get_main_queue(), {
+			self.tableView.reloadData()
+			return
+		})
+	}
+
 	override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
 		// Return the number of sections.
 		return 1
@@ -119,8 +115,8 @@ class DeclineOfferController: UITableViewController {
 		
 		
 		
-		cell.Tournament.text = offer_cell.Tournament
-		cell.Offer_date.text = offer_cell.Match_date
+		cell.Tournament.text = offer_cell.dateOfOffer
+		cell.Offer_date.text = offer_cell.nameOfLocation
 		
 		
 		

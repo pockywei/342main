@@ -28,37 +28,40 @@ class AcceptedOfferDetail:UIViewController{
 		
 	
 	}
-	@IBOutlet weak var Tournament_name: UILabel!
+	
 
-	@IBOutlet weak var HomeTeam: UILabel!
+	@IBOutlet weak var decline_reason: UILabel!
 
+	@IBOutlet weak var location: UILabel!
 
-	@IBOutlet weak var AwayTeam: UILabel!
+	@IBOutlet weak var matchdate: UILabel!
 	
 	
 	@IBOutlet weak var Offer_Date: UILabel!
 	
+	@IBOutlet weak var sb: UIImageView!
 	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		
+		let blurEffect =  UIBlurEffect(style: UIBlurEffectStyle.Light)
+		let bluredEffectView = UIVisualEffectView(effect: blurEffect)
+		bluredEffectView.frame = CGRectMake(-13, 0,460, 800)
+		self.sb.addSubview(bluredEffectView)
+
 		if let acceptOffer_tetail = acceptOffer {
 			
-			Tournament_name.text = acceptOffer_tetail.Tournament
+			let index=acceptOffer_tetail.dateOfOffer.startIndex.advancedBy(10)
 			
 			
-			HomeTeam.text = acceptOffer_tetail.TeamA_name
+			decline_reason.text=""
 			
+			location.text=acceptOffer_tetail.nameOfLocation
 			
-			AwayTeam.text = acceptOffer_tetail.TeamB_name
+			Offer_Date.text=acceptOffer_tetail.dateOfOffer.substringToIndex(index)
 			
-			Offer_Date.text = acceptOffer_tetail.Match_date
-			
-			
-			
-			
+			matchdate.text=acceptOffer_tetail.dateOfMatch.substringToIndex(index)
 			
 		}
 		

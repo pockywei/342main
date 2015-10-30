@@ -14,8 +14,16 @@ import Foundation
 class About_us_ViewController:UIViewController{
 	@IBOutlet weak var menuButton:UIBarButtonItem!
 
+	@IBOutlet weak var transpancy: UIImageView!
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		let blurEffect =  UIBlurEffect(style: UIBlurEffectStyle.Light)
+		let bluredEffectView = UIVisualEffectView(effect: blurEffect)
+		bluredEffectView.frame = CGRectMake(-13, 0, 460, 800)
+		self.transpancy.addSubview(bluredEffectView)
+		
+		
 		if self.revealViewController() != nil {
 			menuButton.target = self.revealViewController()
 			menuButton.action = "revealToggle:"

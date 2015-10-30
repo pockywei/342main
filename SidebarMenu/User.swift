@@ -24,6 +24,9 @@ class User{
 		return Static.instance!
 	}
 	
-	var userId: Int = 0
+	var userId: String = ""
 	var name: String = ""
+	var password = ""
+	
+	var hometeamid : [Int]?
 }

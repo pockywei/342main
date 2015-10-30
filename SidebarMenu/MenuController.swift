@@ -10,25 +10,48 @@ import UIKit
 
 class MenuController: UITableViewController {
 	
+	@IBOutlet weak var transpancy: UIImageView!
+	@IBOutlet weak var thetitle_user: UILabel!
+	
+	@IBAction func logout(sender: AnyObject) {
+		let isPresentingInAddMealMode = presentingViewController is UINavigationController
+		print("1")
+		if isPresentingInAddMealMode {
+			
+			navigationController!.popViewControllerAnimated(true)
+		} else {
+			
+			dismissViewControllerAnimated(true, completion: nil)
+			
+		}
+		
+	}
 	//var role_play = Player()
 	let user = User.sharedInstance
 	//var referee = Referee()
 	var aUid:String?
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//		
-//        // Uncomment the following line to preserve selection between presentations
-//        // self.clearsSelectionOnViewWillAppear = false
-//
-//        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-//        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-//    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+		let blurEffect =  UIBlurEffect(style: UIBlurEffectStyle.Light)
+		let bluredEffectView = UIVisualEffectView(effect: blurEffect)
+		bluredEffectView.frame = CGRectMake(-13, 0, 450, 800)
+		self.view.addSubview(bluredEffectView)
+		self.view.sendSubviewToBack(bluredEffectView)
+		
+		        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
 	
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
 		
+		self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ceystalhorizon")!)
 		//print(referee.username)
+		thetitle_user.text = "Hi " + user.name
 		print(self.user.userId)
 	}
 	

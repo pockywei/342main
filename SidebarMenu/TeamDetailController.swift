@@ -19,6 +19,9 @@ class TeamDetailController:UIViewController{
 	@IBOutlet weak var Team_name: UILabel!
 	@IBOutlet weak var Team_location: UILabel!
 	var Team : team?
+	
+	@IBOutlet weak var sb: UIImageView!
+	
 	@IBAction func Back_button(sender: AnyObject) {
 		let isPresentingInAddMealMode = presentingViewController is UINavigationController
 		print("1")
@@ -36,20 +39,25 @@ class TeamDetailController:UIViewController{
 	override func viewDidLoad() {
 		super.viewDidLoad()
 	
+		let blurEffect =  UIBlurEffect(style: UIBlurEffectStyle.Light)
+		let bluredEffectView = UIVisualEffectView(effect: blurEffect)
+		bluredEffectView.frame = CGRectMake(-13, 0, 380, 700)
+		self.sb.addSubview(bluredEffectView)
+
 		
 		if let team_detail = Team {
 		
-		Team_manage.text = team_detail.Team_Manage
+		Team_manage.text = "Team manager: "+team_detail.managerName
 			
-			let myString = String(team_detail.Team_grade)
-			Team_grade.text = myString
+			//let myString = String(team_detail.Team_grade!)
+			Team_grade.text = "Team grade: "+team_detail.grade
 			
-			let myString2 = String(team_detail.Team_age_group)
-			Team_age.text = myString2
+			//let myString2 = String(team_detail.Team_age_group!)
+			Team_age.text = "Team age: "+String(team_detail.ageBracket)
 			
-			Team_name.text = team_detail.Team_name
+			Team_name.text = "Team name: "+team_detail.name
 			
-			Team_location.text = team_detail.Team_location
+			Team_location.text = "The sport type: "+team_detail.sport
 			
 		
 		
