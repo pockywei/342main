@@ -20,7 +20,7 @@ class About_us_ViewController:UIViewController{
 		
 		let blurEffect =  UIBlurEffect(style: UIBlurEffectStyle.Light)
 		let bluredEffectView = UIVisualEffectView(effect: blurEffect)
-		bluredEffectView.frame = CGRectMake(-13, 0, 380, 700)
+		bluredEffectView.frame = CGRectMake(-13, 0, 460, 800)
 		self.transpancy.addSubview(bluredEffectView)
 		
 		

@@ -13,6 +13,7 @@ import Foundation
 class WaittingOfferController:UITableViewController {
 	let user = User.sharedInstance
 	
+	@IBOutlet weak var indecate: UIActivityIndicatorView!
 	@IBAction func back_button(sender: AnyObject) {
 		let isPresentingInAddMealMode = presentingViewController is UINavigationController
 		print("1")
@@ -31,9 +32,10 @@ class WaittingOfferController:UITableViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		indecate.startAnimating()
 		let blurEffect =  UIBlurEffect(style: UIBlurEffectStyle.Light)
 		let bluredEffectView = UIVisualEffectView(effect: blurEffect)
-		bluredEffectView.frame = CGRectMake(-13, 0, 380, 700)
+		bluredEffectView.frame = CGRectMake(-13, 0, 460, 800)
 		self.view.addSubview(bluredEffectView)
 		self.view.sendSubviewToBack(bluredEffectView)
 		
@@ -96,6 +98,8 @@ class WaittingOfferController:UITableViewController {
 
 	func refershTable() {
 		dispatch_async(dispatch_get_main_queue(), {
+			self.indecate.stopAnimating()
+			self.indecate.hidden=true
 			self.tableView.reloadData()
 			return
 		})
